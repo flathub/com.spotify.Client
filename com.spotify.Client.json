@@ -1,0 +1,118 @@
+{
+    "app-id": "com.spotify.Client",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "3.24",
+    "sdk": "org.gnome.Sdk",
+    "command": "spotify",
+    "separate-locales": false,
+    "tags": ["proprietary"],
+    "finish-args": [
+        /* X11 + XShm access */
+        "--share=ipc", "--socket=x11",
+        /* Sound access */
+        "--socket=pulseaudio",
+        /* Network access */
+        "--share=network",
+        /* OpenGL */
+        "--device=dri",
+        /* Media keys: */
+        "--talk-name=org.gnome.SettingsDaemon",
+        "--own-name=org.mpris.MediaPlayer2.spotify",
+        "--extra-data=spotify.deb:20073ba6fdf7d960361d4cb2afa6453e7a2108bd84df8f9cdf2cdf7225a83027:91060768::http://repository-origin.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.55.487.g256699aa-16_amd64.deb"
+    ],
+    "build-options" : {
+        "cflags": "-O2 -g",
+        "cxxflags": "-O2 -g",
+        "env": {
+            "V": "1"
+        }
+    },
+    "cleanup": ["/include", "/lib/pkgconfig",
+                "/share/pkgconfig", "/share/aclocal",
+                "/man", "/share/man", "/share/gtk-doc",
+                "/share/doc",
+                "*.la", "*.a"],
+    "modules": [
+        {
+            "name": "udev",
+            "config-opts": ["--disable-hwdb", "--disable-logging", "--disable-gudev",
+                            "--disable-introspection", "--disable-keymap", "--disable-mtd_probe"],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "http://kernel.org/pub/linux/utils/kernel/hotplug/udev-175.tar.bz2",
+                    "sha256": "4c7937fe5a1521316ea571188745b9a00a9fdf314228cffc53a7ba9e5968b7ab"
+                }
+            ]
+        },
+        {
+            "name": "gconf",
+            "config-opts": ["--disable-orbit", "--disable-static", "--disable-introspection",
+                            "--without-openldap"],
+            "cleanup": ["/bin", "/include", "/lib/pkgconfig", "/share", "/etc"],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "http://ftp.gnome.org/pub/GNOME/sources/GConf/3.2/GConf-3.2.6.tar.xz",
+                    "sha256": "1912b91803ab09a5eed34d364bf09fe3a2a9c96751fde03a4e0cfa51a04d784c"
+                }
+            ]
+        },
+        {
+            "name": "compat-ssl",
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "http://security.debian.org/debian-security/pool/updates/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u6_amd64.deb",
+                    "sha256": "0fc777d9242fd93851eb49c4aafd22505048b7797c0178f20c909ff918320619"
+                }
+            ],
+            "buildsystem": "simple",
+            "build-commands": [
+                "ar x libssl1.0.0_1.0.1t-1+deb8u6_amd64.deb",
+                "tar xvf data.tar.xz",
+                "cp ./usr/lib/x86_64-linux-gnu/libssl.so.1.0.0 ./usr/lib/x86_64-linux-gnu/libcrypto.so.1.0.0 /app/lib",
+                "ldconfig -n /app/lib"
+            ]
+        },
+        {
+            "name": "spotify",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install apply_extra /app/bin",
+                "install spotify.sh /app/bin/spotify",
+                "install -D com.spotify.Client.appdata.xml /app/share/appdata/com.spotify.Client.appdata.xml",
+                "cp /usr/bin/ar /app/bin",
+                "cp /usr/lib/libbfd-*.so /app/lib"
+            ],
+            "sources": [
+                {
+                    "type": "script",
+                    "dest-filename": "apply_extra",
+                    "commands": [
+                        "ar x spotify.deb",
+                        "rm -f spotify.deb",
+                        "tar xf data.tar.gz",
+                        "rm -f control.tar.gz data.tar.gz debian-binary",
+                        "mv usr/* .",
+                        "rmdir usr",
+                        "mkdir -p export/share/applications",
+                        "sed s/Icon=spotify-client/Icon=com.spotify.Client/ share/spotify/spotify.desktop > export/share/applications/com.spotify.Client.desktop",
+                        "echo StartupWMClass=Spotify >> export/share/applications/com.spotify.Client.desktop",
+                        "mkdir -p export/share/icons/hicolor/256x256/apps",
+                        "cp share/spotify/icons/spotify-linux-256.png export/share/icons/hicolor/256x256/apps/com.spotify.Client.png"
+                    ]
+                },
+                {
+                    "type": "script",
+                    "commands": ["exec /app/extra/bin/spotify \"$@\""],
+                    "dest-filename": "spotify.sh"
+                },
+                {
+                    "type": "file",
+                    "path": "com.spotify.Client.appdata.xml"
+                }
+            ]
+        }
+    ]
+}
