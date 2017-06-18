@@ -81,7 +81,7 @@
             "build-commands": [
                 "install apply_extra /app/bin",
                 "install spotify.sh /app/bin/spotify",
-                "install -D com.spotify.Client.appdata.xml /app/share/appdata/com.spotify.Client.appdata.xml",
+                "install -Dm644 com.spotify.Client.appdata.xml /app/share/appdata/com.spotify.Client.appdata.xml",
                 "cp /usr/bin/ar /app/bin",
                 "cp /usr/lib/libbfd-*.so /app/lib"
             ],
