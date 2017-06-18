@@ -17,6 +17,7 @@
         "--device=dri",
         /* Media keys: */
         "--talk-name=org.gnome.SettingsDaemon",
+        "--talk-name=org.freedesktop.Notifications",
         "--own-name=org.mpris.MediaPlayer2.spotify",
         "--extra-data=spotify.deb:20073ba6fdf7d960361d4cb2afa6453e7a2108bd84df8f9cdf2cdf7225a83027:91060768::http://repository-origin.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.55.487.g256699aa-16_amd64.deb"
     ],
