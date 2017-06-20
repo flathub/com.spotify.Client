@@ -78,6 +78,28 @@
             ]
         },
         {
+            "name": "ffmpeg",
+            "config-opts": [
+                "--disable-all",
+                "--enable-shared",
+                "--disable-static",
+                "--enable-gnutls",
+                "--enable-avcodec",
+                "--enable-avformat",
+                "--enable-avutil",
+                "--enable-decoder=mp3",
+                "--enable-decoder=aac",
+                "--enable-decoder=flac"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "http://ffmpeg.org/releases/ffmpeg-1.2.12.tar.gz",
+                    "sha256": "b43b1b888ed5885760f10452fb2b9f5d1b384c49f6273e2e66129d9a3c7a837e"
+                }
+            ]
+        },
+        {
             "name": "spotify",
             "buildsystem": "simple",
             "build-commands": [
