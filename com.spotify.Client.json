@@ -81,16 +81,14 @@
         {
             "name": "ffmpeg",
             "config-opts": [
-                "--disable-all",
                 "--enable-shared",
                 "--disable-static",
                 "--enable-gnutls",
-                "--enable-avcodec",
-                "--enable-avformat",
-                "--enable-avutil",
-                "--enable-decoder=mp3",
-                "--enable-decoder=aac",
-                "--enable-decoder=flac"
+                "--disable-doc",
+                "--disable-programs",
+                "--disable-encoders",
+                "--disable-muxers",
+                "--disable-devices"
             ],
             "sources": [
                 {
