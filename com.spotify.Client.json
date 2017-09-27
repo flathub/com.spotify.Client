@@ -2,6 +2,7 @@
     "app-id": "com.spotify.Client",
     "runtime": "org.gnome.Platform",
     "runtime-version": "3.24",
+    "branch": "stable",
     "sdk": "org.gnome.Sdk",
     "command": "spotify",
     "separate-locales": false,
@@ -37,6 +38,38 @@
                 "*.la", "*.a"],
     "modules": [
         "shared-modules/udev/udev-175.json",
+        {
+            "name": "gyp",
+            "buildsystem": "simple",
+            "cleanup": [ "*" ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://chromium.googlesource.com/external/gyp",
+                    "commit": "324dd166b7c0b39d513026fa52d6280ac6d56770"
+                }
+            ],
+            "build-commands": [
+                "python2 setup.py install --prefix=/app"
+            ]
+        },
+        /* Spotify needs a new nss */
+        {
+            "name": "nss",
+            "buildsystem": "simple",
+            "subdir": "nss",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_32_RTM/src/nss-3.32.tar.gz",
+                    "sha256": "35c6f381cc96bb25e4f924469f6ba3e57b3a16e0c2fb7e295a284a00d57ed335"
+                }
+            ],
+            "build-commands": [
+                "./build.sh --system-sqlite --system-nspr -v -o",
+                "install -D ../dist/Release/lib/*.so /app/lib"
+            ]
+        },
         {
             "name": "gconf",
             "config-opts": ["--disable-orbit", "--disable-static", "--disable-introspection",
