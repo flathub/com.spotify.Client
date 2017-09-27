@@ -21,7 +21,7 @@
         "--talk-name=org.gnome.SessionManager",
         "--own-name=org.mpris.MediaPlayer2.spotify",
         "--filesystem=xdg-music:ro",
-        "--extra-data=spotify.deb:8fbe821fd516f5cd77eb2d5085e5acd8f1852b97f7b7294846fcc57b810ef515:92116168::https://repository-origin.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.59.395.ge6ca9946-18_amd64.deb"
+        "--extra-data=spotify.deb:cc69c8826bf495ecf57b1d0daf6df87754592f48668cec4992d5187bbe85d308:93393246::https://repository-origin.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.64.401.g9d720389-21_amd64.deb"
     ],
     "build-options" : {
         "cflags": "-O2 -g",
