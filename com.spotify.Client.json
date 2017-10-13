@@ -91,15 +91,24 @@
             "sources": [
                 {
                     "type": "file",
+                    "only-arches": ["x86_64"],
+                    "dest-filename": "libssl.deb",
                     "url": "http://security.debian.org/debian-security/pool/updates/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u6_amd64.deb",
                     "sha256": "0fc777d9242fd93851eb49c4aafd22505048b7797c0178f20c909ff918320619"
+                },
+                {
+                    "type": "file",
+                    "only-arches": ["i386"],
+                    "dest-filename": "libssl.deb",
+                    "url": "http://security.debian.org/debian-security/pool/updates/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u6_i386.deb",
+                    "sha256": "3dc3484a7f8707bd0d5eb9aa1f5663bd31c17df55b66fd28d4020cedcc926bb0"
                 }
             ],
             "buildsystem": "simple",
             "build-commands": [
-                "ar x libssl1.0.0_1.0.1t-1+deb8u6_amd64.deb",
+                "ar x libssl.deb",
                 "tar xvf data.tar.xz",
-                "cp ./usr/lib/x86_64-linux-gnu/libssl.so.1.0.0 ./usr/lib/x86_64-linux-gnu/libcrypto.so.1.0.0 /app/lib",
+                "cp ./usr/lib/*/libssl.so.1.0.0 ./usr/lib/*/libcrypto.so.1.0.0 /app/lib",
                 "ldconfig -n /app/lib"
             ]
         },
@@ -184,9 +193,18 @@
                 {
                     "type": "extra-data",
                     "filename": "spotify.deb",
+                    "only-arches": ["x86_64"],
                     "url": "https://repository-origin.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.64.407.g9bd02c2d-26_amd64.deb",
                     "sha256": "8c97a95ade46ce9f8e2bbe565cd2e79396ed31fc4f0646a907a6f3e028db887d",
                     "size": 93425432
+                },
+                {
+                    "type": "extra-data",
+                    "filename": "spotify.deb",
+                    "only-arches": ["i386"],
+                    "url": "https://repository-origin.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.64.407.g9bd02c2d-26_i386.deb",
+                    "sha256": "0e32bc8b21d591f8def932403b8ef3632e95eba4b5628506dfdf6d521dce7941",
+                    "size": 97705428
                 }
             ]
         }
