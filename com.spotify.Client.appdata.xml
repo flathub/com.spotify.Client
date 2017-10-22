@@ -7,6 +7,9 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LicenseRef-proprietary</project_license>
   <url type="homepage">https://www.spotify.com</url>
+  <!-- These are the icons for the android apps, from https://play.google.com/store/apps/details?id=com.spotify.music -->
+  <icon type="remote" height="128" width="128">https://lh3.googleusercontent.com/UrY7BAZ-XfXGpfkeWg0zCCeo-7ras4DCoRalC_WXXWTK9q5b0Iw7B0YQMsVxZaNB7DM=w128</icon>
+  <icon type="remote" height="64" width="64">https://lh3.googleusercontent.com/UrY7BAZ-XfXGpfkeWg0zCCeo-7ras4DCoRalC_WXXWTK9q5b0Iw7B0YQMsVxZaNB7DM=w64</icon>
   <kudos>
     <kudo>HiDpiIcon</kudo>
   </kudos>
