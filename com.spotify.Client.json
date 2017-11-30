@@ -1,9 +1,12 @@
 {
     "app-id": "com.spotify.Client",
-    "runtime": "org.gnome.Platform",
-    "runtime-version": "3.24",
     "branch": "stable",
-    "sdk": "org.gnome.Sdk",
+    /* Not actually Electron but shares many deps */
+    "base": "io.atom.electron.BaseApp",
+    "base-version": "stable",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "1.6",
+    "sdk": "org.freedesktop.Sdk",
     "command": "spotify",
     "separate-locales": false,
     "tags": ["proprietary"],
@@ -36,7 +39,6 @@
                 "/share/doc",
                 "*.la", "*.a"],
     "modules": [
-        "shared-modules/udev/udev-175.json",
         {
             "name": "gyp",
             "buildsystem": "simple",
@@ -71,19 +73,6 @@
             "build-commands": [
                 "./build.sh --system-sqlite --system-nspr --enable-libpkix -v -o",
                 "install -D ../dist/Release/lib/*.so /app/lib"
-            ]
-        },
-        {
-            "name": "gconf",
-            "config-opts": ["--disable-orbit", "--disable-static", "--disable-introspection",
-                            "--without-openldap"],
-            "cleanup": ["/bin", "/include", "/lib/pkgconfig", "/share", "/etc"],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "http://ftp.gnome.org/pub/GNOME/sources/GConf/3.2/GConf-3.2.6.tar.xz",
-                    "sha256": "1912b91803ab09a5eed34d364bf09fe3a2a9c96751fde03a4e0cfa51a04d784c"
-                }
             ]
         },
         {
