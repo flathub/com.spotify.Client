@@ -183,17 +183,17 @@
                     "type": "extra-data",
                     "filename": "spotify.deb",
                     "only-arches": ["x86_64"],
-                    "url": "https://repository-origin.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.69.336.g7edcc575-39_amd64.deb",
-                    "sha256": "ed0dc69f7e50879fcf7bd1bb67e33f08af0c17ebd7bb608ce4e7a143dec1022e",
-                    "size": 89614954
+                    "url": "https://repository-origin.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.64.407.g9bd02c2d-26_amd64.deb",
+                    "sha256": "8c97a95ade46ce9f8e2bbe565cd2e79396ed31fc4f0646a907a6f3e028db887d",
+                    "size": 93425432
                 },
                 {
                     "type": "extra-data",
                     "filename": "spotify.deb",
                     "only-arches": ["i386"],
-                    "url": "https://repository-origin.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.69.336.g7edcc575-39_i386.deb",
-                    "sha256": "09f7d26f9a56fa91fcb7984c2c183b627f31cba1a3966c11e3262868fa656821",
-                    "size": 93798286
+                    "url": "https://repository-origin.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.64.407.g9bd02c2d-26_i386.deb",
+                    "sha256": "0e32bc8b21d591f8def932403b8ef3632e95eba4b5628506dfdf6d521dce7941",
+                    "size": 97705428
                 }
             ]
         }
