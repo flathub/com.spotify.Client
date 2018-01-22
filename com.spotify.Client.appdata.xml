@@ -25,6 +25,7 @@
     <kudo>HiDpiIcon</kudo>
   </kudos>
   <releases>
+    <release date="2017-12-20" version="1.0.69.336"/>
     <release date="2017-12-13" version="1.0.64.407"/>
   </releases>
   <update_contact>tingping_at_fedoraproject.org</update_contact>
