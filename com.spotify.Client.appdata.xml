@@ -7,11 +7,25 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LicenseRef-proprietary</project_license>
   <url type="homepage">https://www.spotify.com</url>
+  <description>
+    Access all of your favorite music, discover new songs, and share music online with your friends - all in one place. 
+    Create shared playlists or share individual songs with your Facebook friends with just a click of a button. 
+    Follow your favorite artists or friends to know what they are listening to, and then save the songs to your own playlists. 
+    Spotify is the best way to have access to millions of songs, and all the latest hits.
+  </description>
+  <screenshots>
+    <screenshot>
+      <image type="source">https://spotifypresscom.files.wordpress.com/2015/02/desktop-browse.png</image>
+    </screenshot>
+  </screenshots>
   <!-- These are the icons for the android apps, from https://play.google.com/store/apps/details?id=com.spotify.music -->
   <icon type="remote" height="128" width="128">https://lh3.googleusercontent.com/UrY7BAZ-XfXGpfkeWg0zCCeo-7ras4DCoRalC_WXXWTK9q5b0Iw7B0YQMsVxZaNB7DM=w128</icon>
   <icon type="remote" height="64" width="64">https://lh3.googleusercontent.com/UrY7BAZ-XfXGpfkeWg0zCCeo-7ras4DCoRalC_WXXWTK9q5b0Iw7B0YQMsVxZaNB7DM=w64</icon>
   <kudos>
     <kudo>HiDpiIcon</kudo>
   </kudos>
+  <releases>
+    <release date="2017-12-13" version="1.0.64.407"/>
+  </releases>
   <update_contact>tingping_at_fedoraproject.org</update_contact>
 </component>
