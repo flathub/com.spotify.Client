@@ -82,15 +82,15 @@
                     "type": "file",
                     "only-arches": ["x86_64"],
                     "dest-filename": "libssl.deb",
-                    "url": "http://security.debian.org/debian-security/pool/updates/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u6_amd64.deb",
-                    "sha256": "0fc777d9242fd93851eb49c4aafd22505048b7797c0178f20c909ff918320619"
+                    "url": "http://security.debian.org/debian-security/pool/updates/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u7_amd64.deb",
+                    "sha256": "d99de2cdca54484d23badc5683c7211b3a191977272d9e5281837af863dcdd56"
                 },
                 {
                     "type": "file",
                     "only-arches": ["i386"],
                     "dest-filename": "libssl.deb",
-                    "url": "http://security.debian.org/debian-security/pool/updates/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u6_i386.deb",
-                    "sha256": "3dc3484a7f8707bd0d5eb9aa1f5663bd31c17df55b66fd28d4020cedcc926bb0"
+                    "url": "http://security.debian.org/debian-security/pool/updates/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u7_i386.deb",
+                    "sha256": "2395409504d23899d68809d729cd23e829abc5e1654499ab535afb6938d45946"
                 }
             ],
             "buildsystem": "simple",
