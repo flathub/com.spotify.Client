@@ -92,7 +92,23 @@
                 "--disable-bsfs",
                 "--disable-muxers",
                 "--disable-protocols",
-                "--enable-protocol=file"
+                "--enable-protocol=file",
+                "--disable-decoders",
+                "--enable-decoder=aac",
+                "--enable-decoder=aac_latm",
+                "--enable-decoder=ac3",
+                "--enable-decoder=dts",
+                "--enable-decoder=flac",
+                "--enable-decoder=als",
+                "--enable-decoder=pcm",
+                "--enable-decoder=libopus",
+                "--enable-decoder=libspeex",
+                "--enable-decoder=libvorbis",
+                "--enable-decoder=mp1",
+                "--enable-decoder=mp2",
+                "--enable-decoder=mp3",
+                "--enable-decoder=mp3adu",
+                "--enable-decoder=vorbis"
             ],
             "sources": [
                 {
