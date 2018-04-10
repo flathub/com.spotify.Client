@@ -78,27 +78,27 @@
         {
             "name": "ffmpeg",
             "config-opts": [
+                "--enable-shared",
+                "--disable-static",
+                "--enable-gnutls",
+                "--disable-doc",
                 "--disable-avdevice",
                 "--disable-avfilter",
-                "--disable-ffmpeg",
-                "--disable-ffplay",
-                "--disable-ffprobe",
-                "--disable-ffserver",
-                "--disable-indevs",
-                "--disable-outdevs",
-                "--disable-static",
-                "--disable-stripping",
-                "--disable-swscale",
-                "--enable-gpl",
-                "--enable-runtime-cpudetect",
-                "--enable-shared",
-                "--enable-version3"
+                "--disable-programs",
+                "--disable-encoders",
+                "--disable-hwaccels",
+                "--disable-devices",
+                "--disable-filters",
+                "--disable-bsfs",
+                "--disable-muxers",
+                "--disable-protocols",
+                "--enable-protocol=file"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://ffmpeg.org/releases/ffmpeg-0.10.16.tar.gz",
-                    "sha256": "2c31ccd7a88ed8bf92d3c6aa57ed108fa6fbf58740444b630d193f75835ff567"
+                    "url": "https://ffmpeg.org/releases/ffmpeg-1.2.12.tar.bz2",
+                    "sha256": "913ac95c7fad92c2a4ebcfd11850904f531845c75d45c3e4e4a693990fe2497d"
                 }
             ]
         },
