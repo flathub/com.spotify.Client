@@ -108,7 +108,14 @@
                 "--enable-decoder=mp2",
                 "--enable-decoder=mp3",
                 "--enable-decoder=mp3adu",
-                "--enable-decoder=vorbis"
+                "--enable-decoder=vorbis",
+                "--disable-parsers",
+                "--enable-parser=aac",
+                "--enable-parser=aac_latm",
+                "--enable-parser=ac3",
+                "--enable-parser=flac",
+                "--enable-parser=mpegaudio",
+                "--enable-parser=vorbis"
             ],
             "sources": [
                 {
