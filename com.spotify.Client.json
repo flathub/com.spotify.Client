@@ -76,69 +76,29 @@
             ]
         },
         {
-            "name": "compat-ssl",
-            "sources": [
-                {
-                    "type": "file",
-                    "only-arches": ["x86_64"],
-                    "dest-filename": "libssl.deb",
-                    "url": "http://security.debian.org/debian-security/pool/updates/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u7_amd64.deb",
-                    "sha256": "d99de2cdca54484d23badc5683c7211b3a191977272d9e5281837af863dcdd56"
-                },
-                {
-                    "type": "file",
-                    "only-arches": ["i386"],
-                    "dest-filename": "libssl.deb",
-                    "url": "http://security.debian.org/debian-security/pool/updates/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u7_i386.deb",
-                    "sha256": "2395409504d23899d68809d729cd23e829abc5e1654499ab535afb6938d45946"
-                }
-            ],
-            "buildsystem": "simple",
-            "build-commands": [
-                "ar x libssl.deb",
-                "tar xvf data.tar.xz",
-                "cp ./usr/lib/*/libssl.so.1.0.0 ./usr/lib/*/libcrypto.so.1.0.0 /app/lib",
-                "ldconfig -n /app/lib"
-            ]
-        },
-        {
             "name": "ffmpeg",
             "config-opts": [
-                "--enable-shared",
+                "--disable-avdevice",
+                "--disable-avfilter",
+                "--disable-ffmpeg",
+                "--disable-ffplay",
+                "--disable-ffprobe",
+                "--disable-ffserver",
+                "--disable-indevs",
+                "--disable-outdevs",
                 "--disable-static",
-                "--enable-gnutls",
-                "--disable-doc",
-                "--disable-programs",
-                "--disable-encoders",
-                "--disable-muxers",
-                "--disable-devices",
-                "--disable-hwaccels",
-                "--disable-decoders",
-                "--enable-decoder=aac",
-                "--enable-decoder=aac_latm",
-                "--enable-decoder=ac3",
-                "--enable-decoder=pcm",
-                "--enable-decoder=libopus",
-                "--enable-decoder=libspeex",
-                "--enable-decoder=libvorbis",
-                "--enable-decoder=mp1",
-                "--enable-decoder=mp2",
-                "--enable-decoder=mp3",
-                "--enable-decoder=mp3adu",
-                "--enable-decoder=vorbis",
-                "--disable-parsers",
-                "--enable-parser=aac",
-                "--enable-parser=aac_latm",
-                "--enable-parser=ac3",
-                "--enable-parser=flac",
-                "--enable-parser=mpegaudio",
-                "--enable-parser=vorbis"
+                "--disable-stripping",
+                "--disable-swscale",
+                "--enable-gpl",
+                "--enable-runtime-cpudetect",
+                "--enable-shared",
+                "--enable-version3"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://ffmpeg.org/releases/ffmpeg-1.2.12.tar.gz",
-                    "sha256": "b43b1b888ed5885760f10452fb2b9f5d1b384c49f6273e2e66129d9a3c7a837e"
+                    "url": "https://ffmpeg.org/releases/ffmpeg-0.10.16.tar.gz",
+                    "sha256": "2c31ccd7a88ed8bf92d3c6aa57ed108fa6fbf58740444b630d193f75835ff567"
                 }
             ]
         },
