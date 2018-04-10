@@ -123,11 +123,16 @@
                         "rm -f control.tar.gz data.tar.gz debian-binary",
                         "mv usr/* .",
                         "rmdir usr",
+
                         "mkdir -p export/share/applications",
                         "sed s/Icon=spotify-client/Icon=com.spotify.Client/ share/spotify/spotify.desktop > export/share/applications/com.spotify.Client.desktop",
                         "echo StartupWMClass=Spotify >> export/share/applications/com.spotify.Client.desktop",
-                        "mkdir -p export/share/icons/hicolor/256x256/apps",
-                        "cp share/spotify/icons/spotify-linux-256.png export/share/icons/hicolor/256x256/apps/com.spotify.Client.png"
+
+                        "for size in 16 22 24 32 48 64 128 256 512; do
+                            install -Dm644 share/spotify/icons/spotify-linux-$size.png export/share/icons/hicolor/${size}x${size}/apps/com.spotify.Client.png
+                        done",
+
+                        "rm -r share/spotify/apt-keys share/spotify/spotify.desktop share/spotify/icons share/doc"
                     ]
                 },
                 {
