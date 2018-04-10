@@ -97,26 +97,25 @@
                 "--enable-decoder=aac",
                 "--enable-decoder=aac_latm",
                 "--enable-decoder=ac3",
-                "--enable-decoder=dts",
                 "--enable-decoder=flac",
                 "--enable-decoder=als",
-                "--enable-decoder=pcm",
                 "--enable-decoder=libopus",
                 "--enable-decoder=libspeex",
                 "--enable-decoder=libvorbis",
                 "--enable-decoder=mp1",
                 "--enable-decoder=mp2",
                 "--enable-decoder=mp3",
-                "--enable-decoder=mp3adu",
-                "--enable-decoder=vorbis",
-                "--disable-parsers",
-                "--enable-parser=aac",
-                "--enable-parser=aac_latm",
-                "--enable-parser=ac3",
-                "--enable-parser=flac",
-                "--enable-parser=mpegaudio",
-                "--enable-parser=vorbis"
+                "--enable-decoder=mp3adu"
             ],
+            "build-options": {
+              "arch": {
+                  "i386": {
+                    "config-opts": [
+                      "--disable-optimizations"
+                    ]
+                  }
+                }
+            },
             "sources": [
                 {
                     "type": "archive",
