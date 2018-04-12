@@ -24,7 +24,8 @@
         "--talk-name=org.freedesktop.Notifications",
         "--talk-name=org.gnome.SessionManager",
         "--own-name=org.mpris.MediaPlayer2.spotify",
-        "--filesystem=xdg-music:ro"
+        "--filesystem=xdg-music:ro",
+        "--env=LD_LIBRARY_PATH=/app/lib"
     ],
     "build-options" : {
         "cflags": "-O2 -g",
@@ -121,6 +122,36 @@
                     "type": "archive",
                     "url": "https://ffmpeg.org/releases/ffmpeg-1.2.12.tar.bz2",
                     "sha256": "913ac95c7fad92c2a4ebcfd11850904f531845c75d45c3e4e4a693990fe2497d"
+                }
+            ]
+        },
+        {
+            "name": "libcurl-gnutls",
+            "config-opts": [
+                "--disable-ldap",
+                "--disable-manual",
+                "--disable-ldaps",
+                "--enable-ipv6",
+                "--enable-threaded-resolver",
+                "--with-gnutls=/usr",
+                "--with-ca-bundle='/etc/ssl/certs/ca-certificates.crt'",
+                "--without-gssapi",
+                "--without-libidn",
+                "--without-ssl"
+            ],
+            "cleanup": [
+                "/bin"
+            ],
+            "post-install": [
+                "mv /app/lib/libcurl{,-gnutls}.so.4.5.0",
+                "rm /app/lib/libcurl.so*",
+                "ln -s /app/lib/libcurl-gnutls.so.4.5.0 /app/lib/libcurl-gnutls.so.4"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://curl.haxx.se/download/curl-7.59.0.tar.gz",
+                    "sha256": "099d9c32dc7b8958ca592597c9fabccdf4c08cfb7c114ff1afbbc4c6f13c9e9e"
                 }
             ]
         },
