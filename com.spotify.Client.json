@@ -72,7 +72,7 @@
                 }
             ],
             "build-commands": [
-                "./build.sh --system-sqlite --system-nspr --enable-libpkix -v -o",
+                "./build.sh --system-sqlite --system-nspr --enable-libpkix --disable-tests -v -o",
                 "install -D ../dist/Release/lib/*.so /app/lib"
             ]
         },
