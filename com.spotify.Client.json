@@ -160,7 +160,8 @@
             "buildsystem": "simple",
             "build-commands": [
                 "install apply_extra /app/bin",
-                "install spotify.sh /app/bin/spotify",
+                "install xsettings.py /app/bin",
+                "install spotify-bin /app/bin/spotify",
                 "install -Dm644 com.spotify.Client.appdata.xml /app/share/appdata/com.spotify.Client.appdata.xml",
                 "cp /usr/bin/ar /app/bin",
                 "cp /usr/lib/libbfd-*.so /app/lib"
@@ -189,13 +190,16 @@
                     ]
                 },
                 {
-                    "type": "script",
-                    "commands": ["exec /app/extra/bin/spotify \"$@\""],
-                    "dest-filename": "spotify.sh"
+                    "type": "file",
+                    "path": "com.spotify.Client.appdata.xml"
                 },
                 {
                     "type": "file",
-                    "path": "com.spotify.Client.appdata.xml"
+                    "path": "spotify-bin"
+                },
+                {
+                    "type": "file",
+                    "path": "xsettings.py"
                 },
                 {
                     "type": "extra-data",

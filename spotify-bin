@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+
+import subprocess
+import sys
+
+import xsettings
+
+argv = sys.argv[1:]
+argv.insert(0, '/app/extra/bin/spotify')
+
+try:
+    settings = xsettings.get_xsettings()
+    scale_factor = settings.get(b'Gdk/WindowScalingFactor')
+    argv.insert(1, '--force-device-scale-factor={0:.1f}'.format(scale_factor))
+except Exception:
+    print('Could not determine display scale factor, running with default.')
+
+subprocess.check_call(argv)
