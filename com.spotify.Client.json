@@ -41,42 +41,6 @@
                 "*.la", "*.a"],
     "modules": [
         {
-            "name": "gyp",
-            "buildsystem": "simple",
-            "cleanup": [ "*" ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://chromium.googlesource.com/external/gyp",
-                    "commit": "324dd166b7c0b39d513026fa52d6280ac6d56770"
-                }
-            ],
-            "build-commands": [
-                "python2 setup.py install --prefix=/app"
-            ]
-        },
-        /* Spotify needs a new nss */
-        {
-            "name": "nss",
-            "buildsystem": "simple",
-            "subdir": "nss",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_36_1_RTM/src/nss-3.36.1.tar.gz",
-                    "sha256": "6025441d528ff6a7f1a4b673b6ee7d3540731ada3f78d5acd5c3b3736b222bff"
-                },
-                {
-                    "type": "patch",
-                    "path": "gyp-no-parallel.patch"
-                }
-            ],
-            "build-commands": [
-                "./build.sh --system-sqlite --system-nspr --enable-libpkix --disable-tests -v -o",
-                "install -D ../dist/Release/lib/*.so /app/lib"
-            ]
-        },
-        {
             "name": "ffmpeg",
             "config-opts": [
                 "--enable-shared",
