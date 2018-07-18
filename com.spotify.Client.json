@@ -5,7 +5,7 @@
     "base": "io.atom.electron.BaseApp",
     "base-version": "stable",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "1.6",
+    "runtime-version": "unstable",
     "sdk": "org.freedesktop.Sdk",
     "command": "spotify",
     "separate-locales": false,
@@ -128,7 +128,7 @@
                 "install spotify-bin /app/bin/spotify",
                 "install -Dm644 com.spotify.Client.appdata.xml /app/share/appdata/com.spotify.Client.appdata.xml",
                 "cp /usr/bin/ar /app/bin",
-                "cp /usr/lib/libbfd-*.so /app/lib"
+                "ARCH_TRIPLE=$(gcc --print-multiarch) && cp /usr/lib/${ARCH_TRIPLE}/libbfd-*.so /app/lib"
             ],
             "sources": [
                 {
