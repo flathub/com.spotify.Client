@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import asyncio
+import signal
 import subprocess
 import sys
 
@@ -15,4 +17,15 @@ try:
 except Exception:
     print('Could not determine display scale factor, running with default.')
 
-subprocess.check_call(argv)
+async def run_commands():
+    spotify_proc = await asyncio.create_subprocess_exec(*argv)
+    await asyncio.sleep(1)  # Arbitrary wait hoping the window exists
+    xprop_proc = await asyncio.create_subprocess_exec(
+        'xprop', '-f', '_GTK_THEME_VARIANT', '8u',
+        '-set', '_GTK_THEME_VARIANT', 'dark',
+        '-name', 'Spotify')
+    await spotify_proc.wait()
+    await xprop_proc.wait()
+
+signal.signal(signal.SIGINT, signal.SIG_DFL)
+asyncio.get_event_loop().run_until_complete(run_commands())

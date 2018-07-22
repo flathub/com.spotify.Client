@@ -120,6 +120,16 @@
             ]
         },
         {
+            "name": "xprop",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://xorg.freedesktop.org/archive/individual/app/xprop-1.2.3.tar.bz2",
+                    "sha256": "d22afb28c86d85fff10a50156a7d0fa930c80ae865d70b26d805fd28a17a521b"
+                }
+            ]
+        },
+        {
             "name": "spotify",
             "buildsystem": "simple",
             "build-commands": [
