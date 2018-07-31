@@ -25,6 +25,7 @@
         "--talk-name=org.gnome.SessionManager",
         "--own-name=org.mpris.MediaPlayer2.spotify",
         "--filesystem=xdg-music:ro",
+        "--filesystem=xdg-pictures:ro",
         "--env=LD_LIBRARY_PATH=/app/lib"
     ],
     "build-options" : {
