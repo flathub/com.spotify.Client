@@ -1,11 +1,11 @@
 {
     "app-id": "com.spotify.Client",
-    "branch": "stable",
+    "branch": "18.08",
     /* Not actually Electron but shares many deps */
     "base": "io.atom.electron.BaseApp",
-    "base-version": "stable",
+    "base-version": "18.08",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "unstable",
+    "runtime-version": "18.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "spotify",
     "separate-locales": false,
