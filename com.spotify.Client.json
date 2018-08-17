@@ -3,21 +3,17 @@
     "branch": "stable",
     /* Not actually Electron but shares many deps */
     "base": "io.atom.electron.BaseApp",
-    "base-version": "stable",
+    "base-version": "18.08",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "1.6",
+    "runtime-version": "18.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "spotify",
     "separate-locales": false,
     "tags": ["proprietary"],
     "finish-args": [
-        /* X11 + XShm access */
         "--share=ipc", "--socket=x11",
-        /* Sound access */
         "--socket=pulseaudio",
-        /* Network access */
         "--share=network",
-        /* OpenGL */
         "--device=dri",
         /* Media keys: */
         "--talk-name=org.gnome.SettingsDaemon",
@@ -92,7 +88,7 @@
             ]
         },
         {
-            "name": "libcurl-gnutls",
+            "name": "curl",
             "config-opts": [
                 "--disable-ldap",
                 "--disable-manual",
@@ -140,7 +136,7 @@
                 "install spotify-bin /app/bin/spotify",
                 "install -Dm644 com.spotify.Client.appdata.xml /app/share/appdata/com.spotify.Client.appdata.xml",
                 "cp /usr/bin/ar /app/bin",
-                "cp /usr/lib/libbfd-*.so /app/lib"
+                "ARCH_TRIPLE=$(gcc --print-multiarch) && cp /usr/lib/${ARCH_TRIPLE}/libbfd-*.so /app/lib"
             ],
             "sources": [
                 {
