@@ -1,31 +1,8 @@
-#!/usr/bin/env python3
+#!/bin/sh
 
-import asyncio
-import signal
-import subprocess
-import sys
+SCALE_FACTOR=`get-scale-factor.py`
 
-import xsettings
-
-argv = sys.argv[1:]
-argv.insert(0, '/app/extra/bin/spotify')
-
-try:
-    settings = xsettings.get_xsettings()
-    scale_factor = settings.get(b'Gdk/WindowScalingFactor')
-    argv.insert(1, '--force-device-scale-factor={0:.1f}'.format(scale_factor))
-except Exception:
-    print('Could not determine display scale factor, running with default.')
-
-async def run_commands():
-    spotify_proc = await asyncio.create_subprocess_exec(*argv)
-    await asyncio.sleep(1)  # Arbitrary wait hoping the window exists
-    xprop_proc = await asyncio.create_subprocess_exec(
-        'xprop', '-f', '_GTK_THEME_VARIANT', '8u',
-        '-set', '_GTK_THEME_VARIANT', 'dark',
-        '-name', 'Spotify')
-    await spotify_proc.wait()
-    await xprop_proc.wait()
-
-signal.signal(signal.SIGINT, signal.SIG_DFL)
-asyncio.get_event_loop().run_until_complete(run_commands())
+/app/extra/bin/spotify --force-device-scale-factor=$SCALE_FACTOR&
+sleep 2 # TODO: Actually detect when window appears
+# Set dark variant
+xprop -f _GTK_THEME_VARIANT 8u -set _GTK_THEME_VARIANT dark -name Spotify

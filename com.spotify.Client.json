@@ -132,7 +132,7 @@
             "buildsystem": "simple",
             "build-commands": [
                 "install apply_extra /app/bin",
-                "install xsettings.py /app/bin",
+                "install get-scale-factor.py xsettings.py /app/bin",
                 "install spotify-bin /app/bin/spotify",
                 "install -Dm644 com.spotify.Client.appdata.xml /app/share/appdata/com.spotify.Client.appdata.xml",
                 "cp /usr/bin/ar /app/bin",
@@ -172,6 +172,10 @@
                 {
                     "type": "file",
                     "path": "xsettings.py"
+                },
+                {
+                    "type": "file",
+                    "path": "get-scale-factor.py"
                 },
                 {
                     "type": "extra-data",
