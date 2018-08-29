@@ -112,8 +112,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://curl.haxx.se/download/curl-7.59.0.tar.gz",
-                    "sha256": "099d9c32dc7b8958ca592597c9fabccdf4c08cfb7c114ff1afbbc4c6f13c9e9e"
+                    "url": "https://curl.haxx.se/download/curl-7.61.0.tar.gz",
+                    "sha256": "64141f0db4945268a21b490d58806b97c615d3d0c75bf8c335bbe0efd13b45b5"
                 }
             ]
         },
