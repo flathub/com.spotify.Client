@@ -88,36 +88,6 @@
             ]
         },
         {
-            "name": "curl",
-            "config-opts": [
-                "--disable-ldap",
-                "--disable-manual",
-                "--disable-ldaps",
-                "--enable-ipv6",
-                "--enable-threaded-resolver",
-                "--with-gnutls=/usr",
-                "--with-ca-bundle='/etc/ssl/certs/ca-certificates.crt'",
-                "--without-gssapi",
-                "--without-libidn",
-                "--without-ssl"
-            ],
-            "cleanup": [
-                "/bin"
-            ],
-            "post-install": [
-                "mv /app/lib/libcurl{,-gnutls}.so.4.5.0",
-                "rm /app/lib/libcurl.so*",
-                "ln -s /app/lib/libcurl-gnutls.so.4.5.0 /app/lib/libcurl-gnutls.so.4"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://curl.haxx.se/download/curl-7.59.0.tar.gz",
-                    "sha256": "099d9c32dc7b8958ca592597c9fabccdf4c08cfb7c114ff1afbbc4c6f13c9e9e"
-                }
-            ]
-        },
-        {
             "name": "xprop",
             "sources": [
                 {
@@ -136,7 +106,8 @@
                 "install spotify-bin /app/bin/spotify",
                 "install -Dm644 com.spotify.Client.appdata.xml /app/share/appdata/com.spotify.Client.appdata.xml",
                 "cp /usr/bin/ar /app/bin",
-                "ARCH_TRIPLE=$(gcc --print-multiarch) && cp /usr/lib/${ARCH_TRIPLE}/libbfd-*.so /app/lib"
+                "ARCH_TRIPLE=$(gcc --print-multiarch) && cp /usr/lib/${ARCH_TRIPLE}/libbfd-*.so /app/lib",
+                "ARCH_TRIPLE=$(gcc --print-multiarch) && ln -s /usr/lib/${ARCH_TRIPLE}/libcurl.so.4.5.0 /app/lib/libcurl-gnutls.so.4"
             ],
             "sources": [
                 {
