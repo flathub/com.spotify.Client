@@ -1,7 +1,7 @@
 {
     "app-id": "com.spotify.Client",
     "branch": "stable",
-    /* Not actually Electron but shares many deps */
+    "//": "Not actually Electron but shares many deps",
     "base": "io.atom.electron.BaseApp",
     "base-version": "18.08",
     "runtime": "org.freedesktop.Platform",
@@ -9,13 +9,15 @@
     "sdk": "org.freedesktop.Sdk",
     "command": "spotify",
     "separate-locales": false,
-    "tags": ["proprietary"],
+    "tags": [
+        "proprietary"
+    ],
     "finish-args": [
-        "--share=ipc", "--socket=x11",
+        "--share=ipc",
+        "--socket=x11",
         "--socket=pulseaudio",
         "--share=network",
         "--device=dri",
-        /* Media keys: */
         "--talk-name=org.gnome.SettingsDaemon",
         "--talk-name=org.freedesktop.Notifications",
         "--talk-name=org.gnome.SessionManager",
@@ -25,18 +27,18 @@
         "--env=LD_LIBRARY_PATH=/app/lib",
         "--env=TMPDIR="
     ],
-    "build-options" : {
-        "cflags": "-O2 -g",
-        "cxxflags": "-O2 -g",
-        "env": {
-            "V": "1"
-        }
-    },
-    "cleanup": ["/include", "/lib/pkgconfig",
-                "/share/pkgconfig", "/share/aclocal",
-                "/man", "/share/man", "/share/gtk-doc",
-                "/share/doc",
-                "*.la", "*.a"],
+    "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "/share/pkgconfig",
+        "/share/aclocal",
+        "/man",
+        "/share/man",
+        "/share/gtk-doc",
+        "/share/doc",
+        "*.la",
+        "*.a"
+    ],
     "modules": [
         {
             "name": "ffmpeg",
@@ -71,12 +73,12 @@
                 "--enable-decoder=mp3adu"
             ],
             "build-options": {
-              "arch": {
-                  "i386": {
-                    "config-opts": [
-                      "--disable-optimizations"
-                    ]
-                  }
+                "arch": {
+                    "i386": {
+                        "config-opts": [
+                            "--disable-optimizations"
+                        ]
+                    }
                 }
             },
             "sources": [
@@ -120,15 +122,10 @@
                         "rm -f control.tar.gz data.tar.gz debian-binary",
                         "mv usr/* .",
                         "rmdir usr",
-
                         "mkdir -p export/share/applications",
                         "sed s/Icon=spotify-client/Icon=com.spotify.Client/ share/spotify/spotify.desktop > export/share/applications/com.spotify.Client.desktop",
                         "echo StartupWMClass=Spotify >> export/share/applications/com.spotify.Client.desktop",
-
-                        "for size in 16 22 24 32 48 64 128 256 512; do
-                            install -Dm644 share/spotify/icons/spotify-linux-$size.png export/share/icons/hicolor/${size}x${size}/apps/com.spotify.Client.png
-                        done",
-
+                        "for size in 16 22 24 32 48 64 128 256 512; do install -Dm644 share/spotify/icons/spotify-linux-$size.png export/share/icons/hicolor/${size}x${size}/apps/com.spotify.Client.png; done",
                         "rm -r share/spotify/apt-keys share/spotify/spotify.desktop share/spotify/icons share/doc"
                     ]
                 },
@@ -151,16 +148,20 @@
                 {
                     "type": "extra-data",
                     "filename": "spotify.deb",
-                    "only-arches": ["x86_64"],
-                    "url": "http://repository-origin.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.80.480.g51b03ac3-13_amd64.deb",
-                    "sha256": "e32f4816ae79dbfa0c14086e76df3bc83d526402aac1dbba534127fc00fe50ea",
-                    "size": 97542898
+                    "only-arches": [
+                        "x86_64"
+                    ],
+                    "url": "https://repository-origin.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.89.313.g34a58dea-5_amd64.deb",
+                    "sha256": "2d563ce0c8ed62e3ea37ee9a7d3f5fe6bb262f8773f556ff0a0a836706d2a8ab",
+                    "size": 103077554
                 },
                 {
                     "type": "extra-data",
                     "filename": "spotify.deb",
-                    "only-arches": ["i386"],
-                    "url": "http://repository-origin.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.72.117.g6bd7cc73-35_i386.deb",
+                    "only-arches": [
+                        "i386"
+                    ],
+                    "url": "https://repository-origin.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.72.117.g6bd7cc73-35_i386.deb",
                     "sha256": "f5ac29e8374901ce7401825d13471c03bcf6ec8106f8c210c710b0a8d7b22ca9",
                     "size": 95135550
                 }
