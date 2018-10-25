@@ -151,9 +151,9 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://repository-origin.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.89.313.g34a58dea-5_amd64.deb",
-                    "sha256": "2d563ce0c8ed62e3ea37ee9a7d3f5fe6bb262f8773f556ff0a0a836706d2a8ab",
-                    "size": 103077554
+                    "url": "https://repository-origin.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.92.390.g2ce5ec7d-18_amd64.deb",
+                    "sha256": "039443c918f44f853ef293b5804481b503ae5a5ec63e2bc670e7aecfb6c84f80",
+                    "size": 102410368
                 },
                 {
                     "type": "extra-data",
