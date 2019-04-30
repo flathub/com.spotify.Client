@@ -152,8 +152,8 @@
                         "x86_64"
                     ],
                     "url": "https://repository-origin.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.1.5.153.gf614956d-16_amd64.deb",
-                    "sha256": "4b77c6baa59d5e8d8e6f800138fefdf579747cb81615b9711dfa25d6c2d5fa9f",
-                    "size": 104760412
+                    "sha256": "a7e189c430af1788c4f7d02ae411bfb38f0eccc5f829218d9dc81e1dab382037",
+                    "size": 113728674
                 },
                 {
                     "type": "extra-data",
