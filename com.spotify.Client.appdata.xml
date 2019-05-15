@@ -36,6 +36,7 @@
     <category>Music</category>
     <category>Player</category>
   </categories>
+  <content_rating type="oars-1.1" />
   <!-- These are the icons for the android apps, from https://play.google.com/store/apps/details?id=com.spotify.music -->
   <icon type="remote" height="128" width="128">https://lh3.googleusercontent.com/UrY7BAZ-XfXGpfkeWg0zCCeo-7ras4DCoRalC_WXXWTK9q5b0Iw7B0YQMsVxZaNB7DM=w128</icon>
   <icon type="remote" height="64" width="64">https://lh3.googleusercontent.com/UrY7BAZ-XfXGpfkeWg0zCCeo-7ras4DCoRalC_WXXWTK9q5b0Iw7B0YQMsVxZaNB7DM=w64</icon>
