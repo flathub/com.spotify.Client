@@ -25,7 +25,7 @@
         "--filesystem=xdg-music:ro",
         "--filesystem=xdg-pictures:ro",
         "--env=LD_LIBRARY_PATH=/app/lib",
-        "--env=TMPDIR="
+        "--env=TMPDIR=/tmp"
     ],
     "cleanup": [
         "/include",
