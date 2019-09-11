@@ -84,8 +84,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://ffmpeg.org/releases/ffmpeg-1.2.12.tar.bz2",
-                    "sha256": "913ac95c7fad92c2a4ebcfd11850904f531845c75d45c3e4e4a693990fe2497d"
+                    "url": "https://ffmpeg.org/releases/ffmpeg-3.2.14.tar.xz",
+                    "sha256": "a0047aa0215538a13d10da2fe48674af574e8e94b7ecf3071bdf1addb056be92"
                 }
             ]
         },
