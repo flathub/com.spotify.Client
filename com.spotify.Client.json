@@ -1,6 +1,5 @@
 {
     "app-id": "com.spotify.Client",
-    "branch": "stable",
     "//": "Not actually Electron but shares many deps",
     "base": "io.atom.electron.BaseApp",
     "base-version": "18.08",
