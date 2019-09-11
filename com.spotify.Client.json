@@ -1,10 +1,7 @@
 {
     "app-id": "com.spotify.Client",
-    "//": "Not actually Electron but shares many deps",
-    "base": "io.atom.electron.BaseApp",
-    "base-version": "18.08",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "18.08",
+    "runtime-version": "19.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "spotify",
     "separate-locales": false,
@@ -39,6 +36,47 @@
         "*.a"
     ],
     "modules": [
+        "shared-modules/gtk2/gtk2.json",
+        "shared-modules/dbus-glib/dbus-glib-0.110.json",
+        {
+            "name": "gconf",
+            "cleanup": [
+              "/bin",
+              "/libexec",
+              "/share/sgml",
+              "/etc/xdg/autostart",
+              "/share/dbus-1"
+            ],
+            "config-opts": [
+                "--disable-static",
+                "--disable-gtk-doc",
+                "--disable-orbit",
+                "--disable-introspection"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/GConf/3.2/GConf-3.2.6.tar.xz",
+                    "sha256": "1912b91803ab09a5eed34d364bf09fe3a2a9c96751fde03a4e0cfa51a04d784c"
+                }
+            ]
+        },
+        {
+            "name": "libnotify",
+            "cleanup": ["/bin"],
+            "config-opts": [
+                "--disable-static",
+                "--disable-tests",
+                "--disable-introspection"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/libnotify/0.7/libnotify-0.7.7.tar.xz",
+                    "sha256": "9cb4ce315b2655860c524d46b56010874214ec27e854086c1a1d0260137efc04"
+                }
+            ]
+        },
         {
             "name": "ffmpeg",
             "config-opts": [
@@ -71,15 +109,6 @@
                 "--enable-decoder=mp3",
                 "--enable-decoder=mp3adu"
             ],
-            "build-options": {
-                "arch": {
-                    "i386": {
-                        "config-opts": [
-                            "--disable-optimizations"
-                        ]
-                    }
-                }
-            },
             "sources": [
                 {
                     "type": "archive",
@@ -153,16 +182,6 @@
                     "url": "https://repository-origin.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.1.10.546.ge08ef575-19_amd64.deb",
                     "sha256": "da49fd4d222ff7d719345fba6298f38a6422ef293bb43ada13cf857a694a12e6",
                     "size": 114975574
-                },
-                {
-                    "type": "extra-data",
-                    "filename": "spotify.deb",
-                    "only-arches": [
-                        "i386"
-                    ],
-                    "url": "https://repository-origin.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.0.72.117.g6bd7cc73-35_i386.deb",
-                    "sha256": "f5ac29e8374901ce7401825d13471c03bcf6ec8106f8c210c710b0a8d7b22ca9",
-                    "size": 95135550
                 }
             ]
         }
