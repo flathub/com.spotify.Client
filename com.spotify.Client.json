@@ -37,30 +37,6 @@
     ],
     "modules": [
         "shared-modules/gtk2/gtk2.json",
-        "shared-modules/dbus-glib/dbus-glib-0.110.json",
-        {
-            "name": "gconf",
-            "cleanup": [
-              "/bin",
-              "/libexec",
-              "/share/sgml",
-              "/etc/xdg/autostart",
-              "/share/dbus-1"
-            ],
-            "config-opts": [
-                "--disable-static",
-                "--disable-gtk-doc",
-                "--disable-orbit",
-                "--disable-introspection"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/GConf/3.2/GConf-3.2.6.tar.xz",
-                    "sha256": "1912b91803ab09a5eed34d364bf09fe3a2a9c96751fde03a4e0cfa51a04d784c"
-                }
-            ]
-        },
         {
             "name": "libnotify",
             "cleanup": ["/bin"],
