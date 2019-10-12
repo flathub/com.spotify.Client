@@ -111,6 +111,8 @@
                 "install get-scale-factor.py xsettings.py /app/bin",
                 "install spotify-bin /app/bin/spotify",
                 "install -Dm644 com.spotify.Client.appdata.xml /app/share/appdata/com.spotify.Client.appdata.xml",
+                "install -Dm644 com.spotify.Client.svg /app/share/icons/hicolor/scalable/apps/com.spotify.Client.svg",
+                "install -Dm644 com.spotify.Client-symbolic.svg /app/share/icons/hicolor/symbolic/apps/com.spotify.Client-symbolic.svg",
                 "cp /usr/bin/ar /app/bin",
                 "ARCH_TRIPLE=$(gcc --print-multiarch) && cp /usr/lib/${ARCH_TRIPLE}/libbfd-*.so /app/lib",
                 "ARCH_TRIPLE=$(gcc --print-multiarch) && ln -s /usr/lib/${ARCH_TRIPLE}/libcurl.so.4.5.0 /app/lib/libcurl-gnutls.so.4"
@@ -129,13 +131,20 @@
                         "mkdir -p export/share/applications",
                         "sed s/Icon=spotify-client/Icon=com.spotify.Client/ share/spotify/spotify.desktop > export/share/applications/com.spotify.Client.desktop",
                         "echo StartupWMClass=Spotify >> export/share/applications/com.spotify.Client.desktop",
-                        "for size in 16 22 24 32 48 64 128 256 512; do install -Dm644 share/spotify/icons/spotify-linux-$size.png export/share/icons/hicolor/${size}x${size}/apps/com.spotify.Client.png; done",
                         "rm -r share/spotify/apt-keys share/spotify/spotify.desktop share/spotify/icons share/doc"
                     ]
                 },
                 {
                     "type": "file",
                     "path": "com.spotify.Client.appdata.xml"
+                },
+                {
+                    "type": "file",
+                    "path": "com.spotify.Client.svg"
+                },
+                {
+                    "type": "file",
+                    "path": "com.spotify.Client-symbolic.svg"
                 },
                 {
                     "type": "file",
