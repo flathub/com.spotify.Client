@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
-  <id>com.spotify.Client.desktop</id>
+  <id>com.spotify.Client</id>
+  <provides><id>com.spotify.Client.desktop</id></provides>
+  <launchable type="desktop-id">com.spotify.Client.desktop</launchable>
   <name>Spotify</name>
   <developer_name>Spotify</developer_name>
   <summary>Online music streaming service</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LicenseRef-proprietary=https://www.spotify.com/us/legal/end-user-agreement/</project_license>
   <url type="homepage">https://www.spotify.com</url>
+  <url type="help">https://community.spotify.com/t5/Desktop-Linux/bd-p/desktop_linux</url>
   <description>
     <p>Access all of your favorite music, discover new songs, and share music online with your friends - all in one place. 
     Create shared playlists or share individual songs with your Facebook friends with just a click of a button. 
@@ -27,15 +30,6 @@
       <image type="source" width="1280" height="720">https://negativo17.org/appstream/spotify-2.png</image>
     </screenshot>
   </screenshots>
-  <categories>
-    <category>Audio</category>
-    <category>AudioVideo</category>
-    <category>Music</category>
-    <category>Player</category>
-  </categories>
-  <!-- These are the icons for the android apps, from https://play.google.com/store/apps/details?id=com.spotify.music -->
-  <icon type="remote" height="128" width="128">https://lh3.googleusercontent.com/UrY7BAZ-XfXGpfkeWg0zCCeo-7ras4DCoRalC_WXXWTK9q5b0Iw7B0YQMsVxZaNB7DM=w128</icon>
-  <icon type="remote" height="64" width="64">https://lh3.googleusercontent.com/UrY7BAZ-XfXGpfkeWg0zCCeo-7ras4DCoRalC_WXXWTK9q5b0Iw7B0YQMsVxZaNB7DM=w64</icon>
   <kudos>
     <kudo>HiDpiIcon</kudo>
   </kudos>
