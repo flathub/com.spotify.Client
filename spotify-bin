@@ -2,7 +2,7 @@
 
 SCALE_FACTOR=`get-scale-factor.py`
 
-/app/extra/bin/spotify --force-device-scale-factor=$SCALE_FACTOR "$@" &
+env PULSE_PROP_application.icon_name="com.spotify.Client" /app/extra/bin/spotify --force-device-scale-factor=$SCALE_FACTOR "$@" &
 sleep 2 # TODO: Actually detect when window appears
 # Set dark variant
 xprop -f _GTK_THEME_VARIANT 8u -set _GTK_THEME_VARIANT dark -name 'Spotify' 2> /dev/null
