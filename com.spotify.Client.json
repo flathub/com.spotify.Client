@@ -106,11 +106,30 @@
             ]
         },
         {
+            "name": "python3-XLib",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} XLib"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/65/26/32b8464df2a97e6dd1b656ed26b2c194606c16fe163c695a992b36c11cdf/six-1.13.0-py2.py3-none-any.whl",
+                    "sha256": "1f1b7d42e254082a9db6279deae68afb421ceba6158efa6131de7b3003ee93fd"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/3f/00/321541273b0ed2167b36c82be9baeb0bdc8af1c11c1b01de9436b84b5eaf/xlib-0.21-py2.py3-none-any.whl",
+                    "sha256": "8eee67dad83ef4b82bbbfa85d51eeb20c79d12b119fe25aa1d27bd602ff82212"
+                }
+            ]
+        },
+        {
             "name": "spotify",
             "buildsystem": "simple",
             "build-commands": [
                 "install apply_extra /app/bin",
-                "install get-scale-factor.py xsettings.py /app/bin",
+                "install get-scale-factor.py xsettings.py set-dark-theme-variant.py /app/bin",
                 "install spotify-bin /app/bin/spotify",
                 "install -Dm644 com.spotify.Client.appdata.xml /app/share/appdata/com.spotify.Client.appdata.xml",
                 "install -Dm644 com.spotify.Client.svg /app/share/icons/hicolor/scalable/apps/com.spotify.Client.svg",
@@ -161,6 +180,10 @@
                 {
                     "type": "file",
                     "path": "get-scale-factor.py"
+                },
+                {
+                    "type": "file",
+                    "path": "set-dark-theme-variant.py"
                 },
                 {
                     "type": "extra-data",
