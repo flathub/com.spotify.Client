@@ -11,3 +11,4 @@ MimeType=x-scheme-handler/spotify;
 Categories=Audio;Music;AudioVideo;
 Keywords=Music;Player;Streaming;Online;
 StartupWMClass=Spotify
+X-GNOME-UsesNotifications=true
