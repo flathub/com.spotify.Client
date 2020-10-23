@@ -106,6 +106,21 @@
             ]
         },
         {
+            "name": "spotifywm",
+            "buildsystem": "simple",
+            "build-commands": [
+                "make",
+                "install -Dm644 spotifywm.so /app/lib/spotifywm.so"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/dasJ/spotifywm/archive/master.zip",
+                    "sha256": "133ce3bd232bc2a683d9a80e8b640676b35cefa697eae6629b53f00e4196ecec"
+                }
+            ]
+        },
+        {
             "name": "python3-XLib",
             "buildsystem": "simple",
             "build-commands": [
