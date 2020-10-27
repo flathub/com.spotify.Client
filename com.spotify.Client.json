@@ -116,7 +116,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/dasJ/spotifywm.git",
-                    "commit": "91dd553"
+                    "commit": "91dd5532ffb7a398d775abe94fe7781904ab406f"
                 }
             ]
         },
