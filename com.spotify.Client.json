@@ -114,9 +114,9 @@
             ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://github.com/dasJ/spotifywm/archive/master.zip",
-                    "sha256": "133ce3bd232bc2a683d9a80e8b640676b35cefa697eae6629b53f00e4196ecec"
+                    "type": "git",
+                    "url": "https://github.com/dasJ/spotifywm.git",
+                    "commit": "91dd553"
                 }
             ]
         },
