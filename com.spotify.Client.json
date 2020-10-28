@@ -109,7 +109,7 @@
             "name": "spotifywm",
             "buildsystem": "simple",
             "build-commands": [
-                "make",
+                "make -j ${FLATPAK_BUILDER_N_JOBS:-1}",
                 "install -Dm644 spotifywm.so /app/lib/spotifywm.so"
             ],
             "sources": [
