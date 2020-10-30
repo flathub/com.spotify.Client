@@ -106,6 +106,21 @@
             ]
         },
         {
+            "name": "spotifywm",
+            "buildsystem": "simple",
+            "build-commands": [
+                "make -j ${FLATPAK_BUILDER_N_JOBS:-1}",
+                "install -Dm644 spotifywm.so /app/lib/spotifywm.so"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/dasJ/spotifywm.git",
+                    "commit": "91dd5532ffb7a398d775abe94fe7781904ab406f"
+                }
+            ]
+        },
+        {
             "name": "python3-XLib",
             "buildsystem": "simple",
             "build-commands": [
