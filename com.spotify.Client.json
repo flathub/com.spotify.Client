@@ -40,7 +40,9 @@
         {
             "name": "libnotify",
             "buildsystem": "meson",
-            "cleanup": ["/bin"],
+            "cleanup": [
+                "/bin"
+            ],
             "config-opts": [
                 "-Dtests=false",
                 "-Dintrospection=disabled",
@@ -139,7 +141,7 @@
             "name": "squashfs-tools",
             "buildsystem": "simple",
             "build-commands": [
-            "XZ_SUPPORT=1 make -C squashfs-tools -j ${FLATPAK_BUILDER_N_JOBS} install INSTALL_DIR=${FLATPAK_DEST}/bin"
+                "XZ_SUPPORT=1 make -C squashfs-tools -j ${FLATPAK_BUILDER_N_JOBS} install INSTALL_DIR=${FLATPAK_DEST}/bin"
             ],
             "sources": [
                 {
@@ -215,14 +217,14 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://api.snapcraft.io/api/v1/snaps/download/pOBIoZ2LrCB3rDohMxoYGnbN14EHOgD7_43.snap",
-                    "sha256": "bc5eaee0a17b15d2a680c5b951bbc123b3c730b8c95f6c70311808fc894ccd28",
-                    "size": 181366784,
+                    "url": "https://api.snapcraft.io/api/v1/snaps/download/pOBIoZ2LrCB3rDohMxoYGnbN14EHOgD7_45.snap",
+                    "sha256": "9c83ae53f52d111330808414bbf2cf0ac621f883bb3496626d759807eabcbdee",
+                    "size": 188170240,
                     "x-checker-data": {
                         "type": "snapcraft",
                         "name": "spotify",
                         "channel": "stable"
-                        }
+                    }
                 }
             ]
         }

@@ -34,6 +34,7 @@
     <kudo>HiDpiIcon</kudo>
   </kudos>
   <releases>
+    <release version="1.1.55.494.gca75f788" date="2021-03-18"/>
     <release date="2020-11-16" version="1.1.46.916.g416cacf1"/>
     <release date="2020-09-16" version="1.1.42.622"/>
     <release date="2020-02-19" version="1.1.26.501"/>
@@ -46,6 +47,6 @@
     <release date="2018-10-25" version="1.0.92.390"/>
     <release date="2018-09-15" version="1.0.89.313"/>
   </releases>
-  <content_rating type="oars-1.1" />
+  <content_rating type="oars-1.1"/>
   <update_contact>tingping_at_fedoraproject.org</update_contact>
 </component>
