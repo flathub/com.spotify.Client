@@ -93,8 +93,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://ffmpeg.org/releases/ffmpeg-3.4.7.tar.xz",
-                    "sha256": "efd01782fd29b62505c973f5b61a65632d7b435dc9f4a6c97e92e6afd36cf5c8"
+                    "url": "https://ffmpeg.org/releases/ffmpeg-3.4.8.tar.xz",
+                    "sha256": "09b9e4644e191a5e6c46b7293839297a7b6f5459fb8817d5255ff29c8ae307ae"
                 }
             ]
         },
