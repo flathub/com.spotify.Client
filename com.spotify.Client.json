@@ -53,7 +53,12 @@
                 {
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/libnotify/0.7/libnotify-0.7.9.tar.xz",
-                    "sha256": "66c0517ed16df7af258e83208faaf5069727dfd66995c4bbc51c16954d674761"
+                    "sha256": "66c0517ed16df7af258e83208faaf5069727dfd66995c4bbc51c16954d674761",
+                    "x-checker-data": {
+		        "type": "gnome",
+			"name": "libnotify",
+			"stable-only": false
+		    }
                 }
             ]
         },
@@ -98,12 +103,38 @@
             ]
         },
         {
-            "name": "xprop",
+            "name": "python-setuptools_scm",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --no-deps --no-build-isolation --verbose --prefix=${FLATPAK_DEST} ."
+            ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://xorg.freedesktop.org/archive/individual/app/xprop-1.2.4.tar.bz2",
-                    "sha256": "8c77fb096e46c60032b7e2bde9492c3ffcc18734f50b395085a5f10bfd3cf753"
+                    "url": "https://files.pythonhosted.org/packages/57/38/930b1241372a9f266a7df2b184fb9d4f497c2cef2e016b014f82f541fe7c/setuptools_scm-6.0.1.tar.gz",
+                    "sha256": "d1925a69cb07e9b29416a275b9fadb009a23c148ace905b2fb220649a6c18e92",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "setuptools_scm"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "python-xlib",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --no-deps --no-build-isolation --verbose --prefix=${FLATPAK_DEST} ."
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://files.pythonhosted.org/packages/30/3a/6e27d7682179b2b5a67ff1e8b202c10585023e4c8d2b01db4b06b961aee4/python-xlib-0.30.tar.gz",
+                    "sha256": "74131418faf9e7b83178c71d9d80297fbbd678abe99ae9258f5a20cd027acb5f",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "python-xlib"
+                    }
                 }
             ]
         },
@@ -119,20 +150,6 @@
                     "type": "git",
                     "url": "https://github.com/dasJ/spotifywm.git",
                     "commit": "91dd5532ffb7a398d775abe94fe7781904ab406f"
-                }
-            ]
-        },
-        {
-            "name": "python3-XLib",
-            "buildsystem": "simple",
-            "build-commands": [
-                "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} XLib"
-            ],
-            "sources": [
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/3f/00/321541273b0ed2167b36c82be9baeb0bdc8af1c11c1b01de9436b84b5eaf/xlib-0.21-py2.py3-none-any.whl",
-                    "sha256": "8eee67dad83ef4b82bbbfa85d51eeb20c79d12b119fe25aa1d27bd602ff82212"
                 }
             ]
         },
