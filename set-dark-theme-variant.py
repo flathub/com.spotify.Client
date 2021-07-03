@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 
-import Xlib
-import Xlib.display
+import os
 import time
 import subprocess
+import sys
+
+import Xlib
+import Xlib.display
 
 disp = Xlib.display.Display()
 root = disp.screen().root
@@ -49,6 +52,9 @@ def fallback(window_titles, variant):
         set_theme_variant_by_window_title(title, variant)
 
 if __name__ == '__main__':
+    if 'SPOTIFYFLATPAK_DISABLE_DARK_TITLEBAR' in os.environ:
+        sys.exit(0)
+
     start = time.time()
     # Listen for X Property Change events.
     root.change_attributes(event_mask=Xlib.X.PropertyChangeMask)
