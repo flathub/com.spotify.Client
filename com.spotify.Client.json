@@ -165,8 +165,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/plougher/squashfs-tools.git",
-                    "tag": "4.4-git.1",
-                    "commit": "ddfb69d50971710502c9818a1fd1be42497e9808"
+                    "tag": "4.5",
+                    "commit": "0496d7c3de3e09da37ba492081c86159806ebb07"
                 }
             ]
         },
