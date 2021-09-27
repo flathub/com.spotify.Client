@@ -1,7 +1,7 @@
 {
     "app-id": "com.spotify.Client",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "20.08",
+    "runtime-version": "21.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "spotify",
     "separate-locales": false,
@@ -97,8 +97,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://ffmpeg.org/releases/ffmpeg-3.4.8.tar.xz",
-                    "sha256": "09b9e4644e191a5e6c46b7293839297a7b6f5459fb8817d5255ff29c8ae307ae"
+                    "url": "https://ffmpeg.org/releases/ffmpeg-4.1.7.tar.xz",
+                    "sha256": "7d269e63f92dad65736883b0c9599e893b8cc8411cb5ddd449d98618ed23dea0"
                 }
             ]
         },
@@ -151,7 +151,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/dasJ/spotifywm.git",
-                    "commit": "91dd5532ffb7a398d775abe94fe7781904ab406f"
+                    "commit": "690bd0df7f2563d0eac17f92e531872eae0526c1"
                 }
             ]
         },
