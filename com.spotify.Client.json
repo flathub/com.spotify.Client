@@ -174,7 +174,7 @@
                         "mv squashfs-root/usr/bin/spotify bin/spotify",
                         "mv squashfs-root/usr/share/spotify share/spotify",
                         "rm -r squashfs-root",
-                        "rm -r share/spotify/apt-keys share/spotify/spotify.desktop share/spotify/icons"
+                        "rm -r share/spotify/apt-keys share/spotify/spotify.desktop"
                     ]
                 },
                 {
