@@ -6,6 +6,7 @@
   <name>Spotify</name>
   <developer_name>Spotify</developer_name>
   <summary>Online music streaming service</summary>
+  <summary xml:lang="es">Servicio de transmisión de música en línea</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LicenseRef-proprietary=https://www.spotify.com/us/legal/end-user-agreement/</project_license>
   <url type="homepage">https://www.spotify.com</url>
@@ -16,17 +17,26 @@
     Follow your favorite artists or friends to know what they are listening to, and then save the songs to your own playlists. 
       Spotify is the best way to have access to millions of songs, and all the latest hits.</p>
   </description>
+  <description xml:lang="es">
+    <p>Acceda a toda su música favorita, descubra canciones nuevas y comparta música en línea con sus amigos, todo en un solo lugar.
+    Cree listas de reproducción compartidas o comparta canciones individuales con sus amigos de Facebook con un sólo clic.
+    Siga a sus artistas o amigos favoritos para saber qué están escuchando y luego guarde las canciones en sus propias listas de reproducción.
+      Spotify es la mejor manera de tener acceso a millones de canciones y a todos los últimos éxitos.</p>
+  </description>
   <screenshots>
     <screenshot type="default">
       <caption>The main Spotify window</caption>
+      <caption xml:lang="es">La ventana principal de Spotify</caption>
       <image type="source" width="1280" height="720">https://negativo17.org/appstream/spotify-0.png</image>
     </screenshot>
     <screenshot>
       <caption>Artist detail</caption>
+      <caption xml:lang="es">Detalles del artista</caption>
       <image type="source" width="1280" height="720">https://negativo17.org/appstream/spotify-1.png</image>
     </screenshot>
     <screenshot>
       <caption>Genre based radio</caption>
+      <caption xml:lang="es">Radio basada en el género</caption>
       <image type="source" width="1280" height="720">https://negativo17.org/appstream/spotify-2.png</image>
     </screenshot>
   </screenshots>
