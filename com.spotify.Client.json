@@ -154,7 +154,6 @@
         {
             "name": "ffmpeg-4.4",
             "config-opts": [
-                "--libdir=\"/app/lib/\"",
                 "--enable-shared",
                 "--disable-static",
                 "--enable-gnutls",
