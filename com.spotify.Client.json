@@ -156,7 +156,7 @@
             "buildsystem": "simple",
             "build-commands": [
                 "cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX:PATH=/app -B Build",
-                "cd Build && make -j7 && make install"
+                "cd Build && make -j${FLATPAK_BUILDER_N_JOBS:-1} && make install"
             ],
             "sources": [
                 {
