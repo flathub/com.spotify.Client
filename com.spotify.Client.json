@@ -169,9 +169,6 @@
         {
             "name": "ffmpeg-4.4",
             "build-options": {
-                "cflags": "-O2 -g -fstack-protector-strong -D_FORTIFY_SOURCE=2",
-                "cxxflags": "-O2 -g -fstack-protector-strong -D_FORTIFY_SOURCE=2",
-                "ldflags": "-fstack-protector-strong -Wl,-z,relro,-z,now",
                 "prefix": "/app/",
                 "env": {
                     "V": "1"
