@@ -150,6 +150,88 @@
                 }
             ]
         },
+        /* THESE CANNOT BE UPDATED UNTIL SPOTIFY SUPPORTS ffmpeg 5 ------------------------------------------------------- */
+        {
+            "name": "sdl2",
+            "buildsystem": "simple",
+            "build-commands": [
+                "cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX:PATH=/app -B Build",
+                "cd Build && make -j7 && make install"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/libsdl-org/SDL/releases/download/release-2.0.22/SDL2-2.0.22.tar.gz",
+                    "sha256": "fe7cbf3127882e3fc7259a75a0cb585620272c51745d3852ab9dd87960697f2e"
+                }
+            ]
+        },
+        {
+            "name": "ffmpeg-4.4",
+            "build-options": {
+                "cflags": "-O2 -g -fstack-protector-strong -D_FORTIFY_SOURCE=2",
+                "cxxflags": "-O2 -g -fstack-protector-strong -D_FORTIFY_SOURCE=2",
+                "ldflags": "-fstack-protector-strong -Wl,-z,relro,-z,now",
+                "prefix": "/app/",
+                "env": {
+                    "V": "1"
+                }
+            },
+            "config-opts": [
+                /* Copied from runtine 21.08 */
+                "--libdir=\"/app/lib/\"",
+                "--disable-debug",
+                "--disable-doc",
+                "--disable-static",
+                "--enable-optimizations",
+                "--enable-shared",
+                "--enable-ffplay",
+                "--enable-ffprobe",
+                "--enable-gnutls",
+                "--enable-libaom",
+                "--enable-libdav1d",
+                "--enable-libfdk-aac",
+                "--enable-libmp3lame",
+                "--enable-libfontconfig",
+                "--enable-libfreetype",
+                "--enable-libopus",
+                "--enable-libpulse",
+                "--enable-libspeex",
+                "--enable-libtheora",
+                "--enable-libvorbis",
+                "--enable-libvpx",
+                "--enable-libwebp",
+                "--enable-openal",
+                "--enable-opengl",
+                "--enable-sdl2",
+                "--enable-vulkan",
+                "--enable-zlib",
+                "--enable-libv4l2",
+                "--enable-libxcb",
+                "--enable-vdpau",
+                "--enable-vaapi",
+                "--enable-encoder=ac3,alac,flac,libfdk_aac,g723_1,mp2,libmp3lame,libopus,libspeex,pcm_alaw,pcm_mulaw,pcm_f32le,pcm_s16be,pcm_s24be,pcm_s16le,pcm_s24le,pcm_s32le,pcm_u8,tta,libvorbis,wavpack",
+                "--enable-encoder=ass,ffv1,libaom_av1,libvpx_vp8,libvpx_vp9,mjpeg_vaapi,rawvideo,theora,vp8_vaapi",
+                "--enable-decoder=ac3,alac,flac,libfdk_aac,g723_1,mp2,libmp3lame,libopus,libspeex,pcm_alaw,pcm_mulaw,pcm_f32le,pcm_s16be,pcm_s24be,pcm_s16le,pcm_s24le,pcm_s32le,pcm_u8,tta,libvorbis,wavpack",
+                "--enable-decoder=ass,ffv1,mjpeg,mjpegb,libaom_av1,libdav1d,libvpx_vp8,libvpx_vp9,rawvideo,theora,vp8,vp9",
+                "--enable-encoder=bmp,gif,jpegls,png,tiff,webp",
+                "--enable-decoder=bmp,gif,jpegls,png,tiff,webp",
+                "--enable-hwaccel=vp8_vaapi,mjpeg_vaapi",
+                "--enable-parser=aac,ac3,flac,mjpeg,mpegaudio,mpeg4video,opus,vp3,vp8,vp9,vorbis",
+                "--enable-muxer=ac3,ass,flac,g722,gif,matroska,mp3,mpegvideo,rtp,ogg,opus,pcm_s16be,pcm_s16le,wav,webm",
+                "--enable-demuxer=aac,ac3,ass,flac,g722,gif,image_jpeg_pipe,image_png_pipe,image_webp_pipe,matroska,mjpeg,mov,mp3,mpegvideo,ogg,pcm_mulaw,pcm_alaw,pcm_s16be,pcm_s16le,rtp,wav",
+                "--enable-filter=crop,scale,overlay,amix,amerge,aresample,format,aformat,fps,transpose,pad",
+                "--enable-protocol=crypto,file,pipe,rtp,srtp,rtsp,tcp,udp,unix"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://ffmpeg.org/releases/ffmpeg-4.4.2.tar.gz",
+                    "sha256": "058efd4b6459bc9df54186f17a989d0af619a793aa62f07e96b88632706d6a17"
+                }
+            ]
+        },
+        /* --------------------------------------------------------------------------------------------------------------- */
         {
             "name": "spotify",
             "buildsystem": "simple",
