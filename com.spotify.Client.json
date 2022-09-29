@@ -150,6 +150,49 @@
                 }
             ]
         },
+        /* THIS CANNOT BE UPDATED UNTIL SPOTIFY SUPPORTS ffmpeg 5 ------------------------------------------------------- */
+        {
+            "name": "ffmpeg-4.4",
+            "config-opts": [
+                "--enable-shared",
+                "--disable-static",
+                "--enable-gnutls",
+                "--disable-doc",
+                "--disable-avdevice",
+                "--disable-avfilter",
+                "--disable-programs",
+                "--disable-encoders",
+                "--disable-hwaccels",
+                "--disable-devices",
+                "--disable-filters",
+                "--disable-bsfs",
+                "--disable-muxers",
+                "--disable-protocols",
+                "--enable-protocol=file",
+                "--disable-decoders",
+                "--enable-decoder=aac",
+                "--enable-decoder=aac_latm",
+                "--enable-decoder=ac3",
+                "--enable-decoder=flac",
+                "--enable-decoder=als",
+                "--enable-decoder=mp1",
+                "--enable-decoder=mp2",
+                "--enable-decoder=mp3",
+                "--enable-decoder=mp3adu"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://ffmpeg.org/releases/ffmpeg-4.4.2.tar.gz",
+                    "sha256": "058efd4b6459bc9df54186f17a989d0af619a793aa62f07e96b88632706d6a17"
+                },
+                {
+                    "type": "patch",
+                    "path": "ffmpeg-patch.patch"
+                }
+            ]
+        },
+        /* --------------------------------------------------------------------------------------------------------------- */
         {
             "name": "spotify",
             "buildsystem": "simple",
