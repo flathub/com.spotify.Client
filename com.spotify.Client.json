@@ -112,6 +112,10 @@
                     "type": "git",
                     "url": "https://github.com/dasJ/spotifywm.git",
                     "commit": "690bd0df7f2563d0eac17f92e531872eae0526c1"
+                },
+                {
+                    "type": "patch",
+                    "path": "spotifywm-patch.patch"
                 }
             ]
         },
