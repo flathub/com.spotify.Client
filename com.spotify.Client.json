@@ -15,7 +15,6 @@
         "--share=network",
         "--device=dri",
         "--talk-name=org.gnome.SettingsDaemon.MediaKeys",
-        "--talk-name=org.freedesktop.Notifications",
         "--talk-name=org.gnome.SessionManager",
         "--own-name=org.mpris.MediaPlayer2.spotify",
         "--filesystem=xdg-music:ro",
