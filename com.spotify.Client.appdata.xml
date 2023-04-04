@@ -18,16 +18,20 @@
   </description>
   <screenshots>
     <screenshot type="default">
-      <caption>Playlist/caption>
-      <image type="source" width="1904" height="1027">https://i.imgur.com/OSXNnDb.png</image>
+      <caption>Playlist</caption>
+      <image type="source" width="1920" height="1080">https://github.com/flathub/com.spotify.Client/blob/master/images/Playlist.png</image>
     </screenshot>
     <screenshot>
-      <caption>Artist detail</caption>
-      <image type="source" width="1904" height="1027">https://i.imgur.com/o7iuVJh.png</image>
+      <caption>Artist</caption>
+      <image type="source" width="1920" height="1080">https://github.com/flathub/com.spotify.Client/blob/master/images/Artist.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Podcast</caption>
+      <image type="source" width="1920" height="1080">https://github.com/flathub/com.spotify.Client/blob/master/images/Podcast.png</image>
     </screenshot>
     <screenshot>
       <caption>Fullscreen</caption>
-      <image type="source" width="1904" height="1027">https://i.imgur.com/72TP9K8.png</image>
+      <image type="source" width="1920" height="1080">https://github.com/flathub/com.spotify.Client/blob/master/images/Fullscreen.png</image>
     </screenshot>
   </screenshots>
   <kudos>
