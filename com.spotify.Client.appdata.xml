@@ -18,20 +18,16 @@
   </description>
   <screenshots>
     <screenshot type="default">
-      <caption>Playlist</caption>
-      <image type="source" width="1920" height="1080">https://github.com/flathub/com.spotify.Client/blob/master/images/Playlist.png</image>
+      <caption>The main Spotify window</caption>
+      <image type="source" width="1280" height="720">https://negativo17.org/appstream/spotify-0.png</image>
     </screenshot>
     <screenshot>
-      <caption>Artist</caption>
-      <image type="source" width="1920" height="1080">https://github.com/flathub/com.spotify.Client/blob/master/images/Artist.png</image>
+      <caption>Artist detail</caption>
+      <image type="source" width="1280" height="720">https://negativo17.org/appstream/spotify-1.png</image>
     </screenshot>
     <screenshot>
-      <caption>Podcast</caption>
-      <image type="source" width="1920" height="1080">https://github.com/flathub/com.spotify.Client/blob/master/images/Podcast.png</image>
-    </screenshot>
-    <screenshot>
-      <caption>Fullscreen</caption>
-      <image type="source" width="1920" height="1080">https://github.com/flathub/com.spotify.Client/blob/master/images/Fullscreen.png</image>
+      <caption>Genre based radio</caption>
+      <image type="source" width="1280" height="720">https://negativo17.org/appstream/spotify-2.png</image>
     </screenshot>
   </screenshots>
   <kudos>
