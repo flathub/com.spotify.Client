@@ -217,11 +217,10 @@
                     "type": "script",
                     "dest-filename": "apply_extra",
                     "commands": [
-                        "unsquashfs -quiet -no-progress spotify.snap",
+                        "unsquashfs -quiet -no-progress spotify.snap usr/bin usr/share/spotify",
                         "rm -f spotify.snap",
                         "mkdir bin share",
-                        "mv squashfs-root/usr/bin/spotify bin/spotify",
-                        "mv squashfs-root/usr/share/spotify share/spotify",
+                        "mv squashfs-root/usr/{bin,share} .",
                         "rm -r squashfs-root",
                         "rm -r share/spotify/apt-keys share/spotify/spotify.desktop",
                         "patchelf --replace-needed libcurl-gnutls.so.4 libcurl.so.4 bin/spotify"
