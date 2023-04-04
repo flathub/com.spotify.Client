@@ -217,7 +217,7 @@
                     "type": "script",
                     "dest-filename": "apply_extra",
                     "commands": [
-                        "unsquashfs -no-progress spotify.snap",
+                        "unsquashfs -quiet -no-progress spotify.snap",
                         "rm -f spotify.snap",
                         "mkdir bin share",
                         "mv squashfs-root/usr/bin/spotify bin/spotify",
