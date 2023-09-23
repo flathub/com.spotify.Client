@@ -1,4 +1,5 @@
 app-id: com.spotify.Client
+branch: stable
 runtime: org.freedesktop.Platform
 runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
@@ -52,26 +53,40 @@ modules:
   - name: xprop
     sources:
       - type: archive
-        url: https://xorg.freedesktop.org/archive/individual/app/xprop-1.2.5.tar.gz
-        sha256: b7bf6b6be6cf23e7966a153fc84d5901c14f01ee952fbd9d930aa48e2385d670
+        url: https://xorg.freedesktop.org/archive/individual/app/xprop-1.2.6.tar.gz
+        sha256: 58ee5ee0c47fa454d3b16312e778c3f549605a8ad0fd0daafc70d2d6174b116d
+        x-checker-data:
+          type: anitya
+          project-id: 14958
+          stable-only: false
+          url-template: https://xorg.freedesktop.org/archive/individual/app/xprop-$version.tar.gz
   - name: python-setuptools_scm
     buildsystem: simple
     build-commands:
-      - pip3 install --no-deps --no-build-isolation --verbose --prefix=${FLATPAK_DEST}
-        .
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "setuptools_scm" --no-build-isolation
     sources:
-      - type: archive
-        url: https://files.pythonhosted.org/packages/57/38/930b1241372a9f266a7df2b184fb9d4f497c2cef2e016b014f82f541fe7c/setuptools_scm-6.0.1.tar.gz
-        sha256: d1925a69cb07e9b29416a275b9fadb009a23c148ace905b2fb220649a6c18e92
+      - type: file
+        url: https://files.pythonhosted.org/packages/ab/c3/57f0601a2d4fe15de7a553c00adbc901425661bf048f2a22dfc500caf121/packaging-23.1-py3-none-any.whl
+        sha256: 994793af429502c4ea2ebf6bf664629d07c1a9fe974af92966e4b8d2df7edc61
+      - type: file
+        url: https://files.pythonhosted.org/packages/ca/04/4ea91c627355ae6d976bf7f1fc2815372a96b1b87bf290c8d726d10a08a1/setuptools_scm-8.0.3-py3-none-any.whl
+        sha256: 813822234453438a13c78d05c8af29918fbc06f88efb33d38f065340bbb48c39
+      - type: file
+        url: https://files.pythonhosted.org/packages/97/75/10a9ebee3fd790d20926a90a2547f0bf78f371b2f13aa822c759680ca7b9/tomli-2.0.1-py3-none-any.whl
+        sha256: 939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc
+      - type: file
+        url: https://files.pythonhosted.org/packages/24/21/7d397a4b7934ff4028987914ac1044d3b7d52712f30e2ac7a2ae5bc86dd0/typing_extensions-4.8.0-py3-none-any.whl
+        sha256: 8f92fc8806f9a6b641eaa5318da32b44d401efaac0f6678c9bc448ba3605faa0
   - name: python-xlib
     buildsystem: simple
     build-commands:
-      - pip3 install --no-deps --no-build-isolation --verbose --prefix=${FLATPAK_DEST}
-        .
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "python-xlib" --no-build-isolation
     sources:
-      - type: archive
-        url: https://files.pythonhosted.org/packages/86/f5/8c0653e5bb54e0cbdfe27bf32d41f27bc4e12faa8742778c17f2a71be2c0/python-xlib-0.33.tar.gz
-        sha256: 55af7906a2c75ce6cb280a584776080602444f75815a7aff4d287bb2d7018b32
+      - type: file
+        url: https://files.pythonhosted.org/packages/fc/b8/ff33610932e0ee81ae7f1269c890f697d56ff74b9f5b2ee5d9b7fa2c5355/python_xlib-0.33-py2.py3-none-any.whl
+        sha256: c3534038d42e0df2f1392a1b30a15a4ff5fdc2b86cfa94f072bf11b10a164398
   - name: spotifywm
     buildsystem: simple
     build-commands:
@@ -94,16 +109,24 @@ modules:
       - type: archive
         url: http://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz
         sha256: c0f892943208266f9b6543b3ae308fab6284c5c90e627931446fb49b4221a072
+        x-checker-data:
+          type: anitya
+          project-id: 1868
+          stable-only: false
+          url-template: http://www.oberhumer.com/opensource/lzo/download/lzo-$version.tar.gz
   - name: squashfs-tools
     buildsystem: simple
     build-commands:
       - XZ_SUPPORT=1 LZO_SUPPORT=1 make -C squashfs-tools -j ${FLATPAK_BUILDER_N_JOBS}
-        install INSTALL_DIR=${FLATPAK_DEST}/bin
+        install INSTALL_DIR=${FLATPAK_DEST}/bin INSTALL_MANPAGES_DIR=${FLATPAK_DEST}/man/man1
     sources:
       - type: git
         url: https://github.com/plougher/squashfs-tools.git
-        tag: '4.5'
-        commit: 0496d7c3de3e09da37ba492081c86159806ebb07
+        tag: 4.6.1
+        commit: d8cb82d9840330f9344ec37b992595b5d7b44184
+        x-checker-data:
+          type: git
+          tag-pattern: ^([\d.]+)$
   - name: ffmpeg-4.4
     config-opts:
       - --enable-shared
@@ -131,17 +154,28 @@ modules:
       - --enable-decoder=mp2
       - --enable-decoder=mp3
       - --enable-decoder=mp3adu
+      - --enable-decoder=opus
+      - --enable-decoder=vorbis
     sources:
       - type: archive
-        url: https://ffmpeg.org/releases/ffmpeg-4.4.2.tar.gz
-        sha256: 058efd4b6459bc9df54186f17a989d0af619a793aa62f07e96b88632706d6a17
-      - type: patch
-        path: ffmpeg-patch.patch
+        url: https://ffmpeg.org/releases/ffmpeg-4.4.4.tar.xz
+        sha256: e80b380d595c809060f66f96a5d849511ef4a76a26b76eacf5778b94c3570309
+        x-checker-data:
+          type: anitya
+          project-id: 5405
+          stable-only: true
+          versions:
+            <: '5'
+          url-template: https://ffmpeg.org/releases/ffmpeg-$version.tar.xz
   - name: patchelf
     sources:
-      - type: archive
-        url: https://github.com/NixOS/patchelf/releases/download/0.17.2/patchelf-0.17.2.tar.gz
-        sha256: 20427b718dd130e4b66d95072c2a2bd5e17232e20dad58c1bea9da81fae330e0
+      - type: git
+        url: https://github.com/NixOS/patchelf.git
+        tag: 0.18.0
+        x-checker-data:
+          type: git
+          tag-pattern: ^([\d.]+)$
+        commit: 99c24238981b7b1084313aca8f5c493bb46f302c
   - name: spotify
     buildsystem: simple
     build-commands:
