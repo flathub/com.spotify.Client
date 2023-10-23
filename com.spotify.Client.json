@@ -3,9 +3,6 @@
     "runtime": "org.freedesktop.Platform",
     "runtime-version": "22.08",
     "sdk": "org.freedesktop.Sdk",
-    "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.vala"
-    ],
     "command": "spotify",
     "separate-locales": false,
     "tags": [
@@ -26,10 +23,6 @@
         "--env=LD_LIBRARY_PATH=/app/lib",
         "--env=TMPDIR=/tmp"
     ],
-    "build-options": {
-        "append-path": "/usr/lib/sdk/vala/bin",
-        "prepend-ld-library-path": "/usr/lib/sdk/vala/lib"
-    },
     "cleanup": [
         "/include",
         "/lib/pkgconfig",
@@ -228,6 +221,14 @@
                                 "type": "git",
                                 "tag-pattern": "^([\\d.]+)$"
                             }
+                        },
+                        {
+                            "type": "shell",
+                            "//": "Remove unused Vala/GIR files",
+                            "commands": [
+                                "sed -i 's/Vala REQUIRED/Vala /' src/CMakeLists.txt",
+                                "sed -i '/install.*AyatanaIdo3-0.4.*/d' src/CMakeLists.txt"
+                            ]
                         }
                     ]
                 },
