@@ -410,7 +410,8 @@
                     "x-checker-data": {
                         "type": "snapcraft",
                         "name": "spotify",
-                        "channel": "stable"
+                        "channel": "stable",
+                        "is-main-source": true
                     }
                 }
             ]
