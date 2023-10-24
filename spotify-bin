@@ -37,7 +37,7 @@ if [ $URI_HANDLED -eq 0 ]; then
     exit 0
 fi
 
-env PULSE_PROP_application.icon_name="com.spotify.Client" LD_PRELOAD=/app/lib/spotifywm.so /app/extra/bin/spotify --force-device-scale-factor=$SCALE_FACTOR "$@" &
+env PULSE_PROP_application.icon_name="com.spotify.Client" LD_PRELOAD=/app/lib/spotifywm.so:/app/lib/spotify-preload.so /app/extra/bin/spotify --force-device-scale-factor=$SCALE_FACTOR "$@" &
 `set-dark-theme-variant.py` &
 
 if [ $URI_HANDLED -eq 1 ]; then

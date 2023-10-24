@@ -345,6 +345,20 @@
             ]
         },
         {
+            "name": "spotify-preload",
+            "buildsystem": "simple",
+            "build-commands": [
+                "cc spotify-preload.c -o spotify-preload.so -fPIC -shared -ldl",
+                "install -Dm644 spotify-preload.so /app/lib/spotify-preload.so"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "path": "spotify-preload.c"
+                }
+            ]
+        },
+        {
             "name": "spotify",
             "buildsystem": "simple",
             "build-commands": [
