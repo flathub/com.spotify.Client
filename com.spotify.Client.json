@@ -310,8 +310,7 @@
                 "--enable-decoder=mp3",
                 "--enable-decoder=mp3adu",
                 "--enable-decoder=opus",
-                "--enable-decoder=vorbis",
-                "--disable-inline-asm"
+                "--enable-decoder=vorbis"
             ],
             "sources": [
                 {
@@ -327,6 +326,10 @@
                         },
                         "url-template": "https://ffmpeg.org/releases/ffmpeg-$version.tar.xz"
                     }
+                },
+                {
+                    "type": "patch",
+                    "path": "ffmpeg-binutils-2.41.patch"
                 }
             ]
         },
