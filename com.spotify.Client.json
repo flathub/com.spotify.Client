@@ -239,8 +239,8 @@
                         {
                             "type": "git",
                             "url": "https://github.com/AyatanaIndicators/libayatana-indicator.git",
-                            "tag": "0.9.3",
-                            "commit": "a62e8ca13040554a8fc2536ce7e6aa888c5729d9",
+                            "tag": "0.9.4",
+                            "commit": "611bb384b73fa6311777ba4c41381a06f5b99dad",
                             "x-checker-data": {
                                 "type": "git",
                                 "tag-pattern": "^([\\d.]+)$"
@@ -253,8 +253,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/AyatanaIndicators/libayatana-appindicator.git",
-                    "tag": "0.5.92",
-                    "commit": "d214fe3e7a6b1ba8faea68d70586310b34dc643c",
+                    "tag": "0.5.93",
+                    "commit": "238c8b02718fa5b4af95ede72beeed762094f4cc",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d.]+)$"
@@ -423,9 +423,9 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://api.snapcraft.io/api/v1/snaps/download/pOBIoZ2LrCB3rDohMxoYGnbN14EHOgD7_70.snap",
-                    "sha256": "cf99f6d2dc130d07134672d67484dc25a74a9927345462978b72c0b2efb29a05",
-                    "size": 175001600,
+                    "url": "https://api.snapcraft.io/api/v1/snaps/download/pOBIoZ2LrCB3rDohMxoYGnbN14EHOgD7_73.snap",
+                    "sha256": "67e75bb1749f6df70f21af876790cd1976377ccf1224fe97b30a9a3154bff189",
+                    "size": 183017472,
                     "x-checker-data": {
                         "type": "snapcraft",
                         "name": "spotify",
