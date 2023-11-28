@@ -167,7 +167,8 @@
             "buildsystem": "cmake-ninja",
             "config-opts": [
                 "-DENABLE_BINDINGS_MONO=NO",
-                "-DENABLE_BINDINGS_VALA=NO"
+                "-DENABLE_BINDINGS_VALA=NO",
+                "-DENABLE_GTKDOC=NO"
             ],
             "modules": [
                 "shared-modules/intltool/intltool-0.51.json",
