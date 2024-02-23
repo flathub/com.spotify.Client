@@ -67,8 +67,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://xorg.freedesktop.org/archive/individual/app/xprop-1.2.6.tar.gz",
-                    "sha256": "58ee5ee0c47fa454d3b16312e778c3f549605a8ad0fd0daafc70d2d6174b116d",
+                    "url": "https://xorg.freedesktop.org/archive/individual/app/xprop-1.2.7.tar.gz",
+                    "sha256": "11c06a876b0aa0bfac6cbfe4b3ebe1f5062f8b39b9b1b6c136a8629265f134b6",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 14958,
@@ -424,9 +424,9 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://api.snapcraft.io/api/v1/snaps/download/pOBIoZ2LrCB3rDohMxoYGnbN14EHOgD7_74.snap",
-                    "sha256": "ae5e7a63a015f6fa3e6bafac97b0dffd31513821099ababa3dfbb4fe64735b7f",
-                    "size": 184205312,
+                    "url": "https://api.snapcraft.io/api/v1/snaps/download/pOBIoZ2LrCB3rDohMxoYGnbN14EHOgD7_75.snap",
+                    "sha256": "eb8df85d2c6a179cab354bffe1175d96952a798cad11e4342e45304d081a0d8e",
+                    "size": 186163200,
                     "x-checker-data": {
                         "type": "snapcraft",
                         "name": "spotify",
