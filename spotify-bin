@@ -41,7 +41,7 @@ if [ -f "${XDG_CONFIG_HOME}/spotify-flags.conf" ]; then
     mapfile -t SPOTIFY_USER_FLAGS <<< "$(grep -v '^#' "${XDG_CONFIG_HOME}/spotify-flags.conf")"
 fi
 
-env PULSE_PROP_application.icon_name="com.spotify.Client" LD_PRELOAD=/app/lib/spotifywm.so:/app/lib/spotify-preload.so /app/extra/bin/spotify --force-device-scale-factor=$SCALE_FACTOR "${SPOTIFY_USER_FLAGS[@]}" "$@" &
+env PULSE_PROP_application.icon_name="com.spotify.Client" LD_PRELOAD=/app/lib/spotifywm.so:/app/lib/spotify-preload.so${LD_PRELOAD:+:$LD_PRELOAD} /app/extra/bin/spotify --force-device-scale-factor=$SCALE_FACTOR "${SPOTIFY_USER_FLAGS[@]}" "$@" &
 `set-dark-theme-variant.py` &
 
 if [ $URI_HANDLED -eq 1 ]; then
