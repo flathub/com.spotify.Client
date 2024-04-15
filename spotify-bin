@@ -26,6 +26,11 @@ function waitandopenuri {
     fi
 }
 
+# Create a "spotify" directory in $XDG_CONFIG_HOME.
+# This works around an app bug where proxy settings don't persist when
+# launching the app for the first time. See issue #280 for more context.
+mkdir -p "${XDG_CONFIG_HOME}/spotify"
+
 openuri "$@"
 URI_HANDLED=$?
 # If URI_HANDLED = 0, We raised an existing instance.
