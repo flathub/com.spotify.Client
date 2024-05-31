@@ -216,8 +216,8 @@
                         {
                             "type": "git",
                             "url": "https://github.com/AyatanaIndicators/ayatana-ido.git",
-                            "tag": "0.10.1",
-                            "commit": "13402a2cc4616b4b5f4244413599e635fcfc1401",
+                            "tag": "0.10.2",
+                            "commit": "2bb2f321c64b903b6e4b5c581d79602632c851c5",
                             "x-checker-data": {
                                 "type": "git",
                                 "tag-pattern": "^([\\d.]+)$"
@@ -424,9 +424,9 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://api.snapcraft.io/api/v1/snaps/download/pOBIoZ2LrCB3rDohMxoYGnbN14EHOgD7_75.snap",
-                    "sha256": "eb8df85d2c6a179cab354bffe1175d96952a798cad11e4342e45304d081a0d8e",
-                    "size": 186163200,
+                    "url": "https://api.snapcraft.io/api/v1/snaps/download/pOBIoZ2LrCB3rDohMxoYGnbN14EHOgD7_76.snap",
+                    "sha256": "b4ee97eb221569c5e2a35b4aeef09e5d508a0ec1021a5af7628f70d9a63a567c",
+                    "size": 189304832,
                     "x-checker-data": {
                         "type": "snapcraft",
                         "name": "spotify",
