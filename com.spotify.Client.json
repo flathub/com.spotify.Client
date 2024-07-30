@@ -216,8 +216,8 @@
                         {
                             "type": "git",
                             "url": "https://github.com/AyatanaIndicators/ayatana-ido.git",
-                            "tag": "0.10.2",
-                            "commit": "2bb2f321c64b903b6e4b5c581d79602632c851c5",
+                            "tag": "0.10.3",
+                            "commit": "9906cc1d22f17c3629d32521473b172ae594ddcf",
                             "x-checker-data": {
                                 "type": "git",
                                 "tag-pattern": "^([\\d.]+)$"
@@ -316,8 +316,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://ffmpeg.org/releases/ffmpeg-4.4.4.tar.xz",
-                    "sha256": "e80b380d595c809060f66f96a5d849511ef4a76a26b76eacf5778b94c3570309",
+                    "url": "https://ffmpeg.org/releases/ffmpeg-4.4.5.tar.xz",
+                    "sha256": "f9514e0d3515aee5a271283df71636e1d1ff7274b15853bcd84e144be416ab07",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 5405,
@@ -424,9 +424,9 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://api.snapcraft.io/api/v1/snaps/download/pOBIoZ2LrCB3rDohMxoYGnbN14EHOgD7_76.snap",
-                    "sha256": "b4ee97eb221569c5e2a35b4aeef09e5d508a0ec1021a5af7628f70d9a63a567c",
-                    "size": 189304832,
+                    "url": "https://api.snapcraft.io/api/v1/snaps/download/pOBIoZ2LrCB3rDohMxoYGnbN14EHOgD7_78.snap",
+                    "sha256": "933ca4d76fce6be00cfed42d48e327f1d674c5f3b1441d5c4ee6fe124504f552",
+                    "size": 190631936,
                     "x-checker-data": {
                         "type": "snapcraft",
                         "name": "spotify",
