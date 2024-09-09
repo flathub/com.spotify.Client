@@ -1,7 +1,7 @@
 {
     "app-id": "com.spotify.Client",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "23.08",
+    "runtime-version": "24.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "spotify",
     "separate-locales": false,
@@ -38,32 +38,6 @@
     "modules": [
         "shared-modules/lzo/lzo.json",
         "shared-modules/squashfs-tools/squashfs-tools.json",
-        {
-            "name": "libnotify",
-            "buildsystem": "meson",
-            "cleanup": [
-                "/bin"
-            ],
-            "config-opts": [
-                "-Dtests=false",
-                "-Dintrospection=disabled",
-                "-Dman=false",
-                "-Dgtk_doc=false",
-                "-Ddocbook_docs=disabled"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/libnotify/0.8/libnotify-0.8.3.tar.xz",
-                    "sha256": "ee8f3ef946156ad3406fdf45feedbdcd932dbd211ab4f16f75eba4f36fb2f6c0",
-                    "x-checker-data": {
-                        "type": "gnome",
-                        "name": "libnotify",
-                        "stable-only": false
-                    }
-                }
-            ]
-        },
         {
             "name": "libayatana-appindicator",
             "buildsystem": "cmake-ninja",
