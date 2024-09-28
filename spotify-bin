@@ -1,6 +1,7 @@
 #!/bin/sh
 
 SCALE_FACTOR=`get-scale-factor.py`
+WAYLAND_SOCKET=${WAYLAND_DISPLAY:-"wayland-0"}
 
 function openuri {
     # Spotify doesn't properly support single instance or even just opening URIs itself so lets hack around it:
@@ -48,6 +49,10 @@ fi
 
 if [ "${SCALE_FACTOR}" != "1.0" ]; then
     EXTRA_FLAGS+=("--force-device-scale-factor=${SCALE_FACTOR}")
+fi
+
+if [[ -e "${XDG_RUNTIME_DIR}/${WAYLAND_SOCKET}" || -e "${WAYLAND_DISPLAY}" ]]; then
+    EXTRA_FLAGS+=("--enable-wayland-ime" "--ozone-platform-hint=auto")
 fi
 
 env PULSE_PROP_application.icon_name="com.spotify.Client" LD_PRELOAD=/app/lib/spotify-preload.so${LD_PRELOAD:+:$LD_PRELOAD} /app/extra/bin/spotify "${EXTRA_FLAGS[@]}" "$@" &
