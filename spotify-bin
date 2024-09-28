@@ -43,10 +43,14 @@ if [ $URI_HANDLED -eq 0 ]; then
 fi
 
 if [ -f "${XDG_CONFIG_HOME}/spotify-flags.conf" ]; then
-    mapfile -t SPOTIFY_USER_FLAGS <<< "$(grep -v '^#' "${XDG_CONFIG_HOME}/spotify-flags.conf")"
+    mapfile -t EXTRA_FLAGS <<< "$(grep -v '^#' "${XDG_CONFIG_HOME}/spotify-flags.conf")"
 fi
 
-env PULSE_PROP_application.icon_name="com.spotify.Client" LD_PRELOAD=/app/lib/spotify-preload.so${LD_PRELOAD:+:$LD_PRELOAD} /app/extra/bin/spotify --force-device-scale-factor=$SCALE_FACTOR "${SPOTIFY_USER_FLAGS[@]}" "$@" &
+if [ "${SCALE_FACTOR}" != "1.0" ]; then
+    EXTRA_FLAGS+=("--force-device-scale-factor=${SCALE_FACTOR}")
+fi
+
+env PULSE_PROP_application.icon_name="com.spotify.Client" LD_PRELOAD=/app/lib/spotify-preload.so${LD_PRELOAD:+:$LD_PRELOAD} /app/extra/bin/spotify "${EXTRA_FLAGS[@]}" "$@" &
 
 if [ $URI_HANDLED -eq 1 ]; then
     waitandopenuri "$@"
