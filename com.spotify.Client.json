@@ -63,65 +63,6 @@
             ]
         },
         {
-            "name": "xprop",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://xorg.freedesktop.org/archive/individual/app/xprop-1.2.7.tar.gz",
-                    "sha256": "11c06a876b0aa0bfac6cbfe4b3ebe1f5062f8b39b9b1b6c136a8629265f134b6",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 14958,
-                        "stable-only": false,
-                        "url-template": "https://xorg.freedesktop.org/archive/individual/app/xprop-$version.tar.gz"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "python-setuptools_scm",
-            "buildsystem": "simple",
-            "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"setuptools_scm\" --no-build-isolation"
-            ],
-            "sources": [
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ab/c3/57f0601a2d4fe15de7a553c00adbc901425661bf048f2a22dfc500caf121/packaging-23.1-py3-none-any.whl",
-                    "sha256": "994793af429502c4ea2ebf6bf664629d07c1a9fe974af92966e4b8d2df7edc61"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ca/04/4ea91c627355ae6d976bf7f1fc2815372a96b1b87bf290c8d726d10a08a1/setuptools_scm-8.0.3-py3-none-any.whl",
-                    "sha256": "813822234453438a13c78d05c8af29918fbc06f88efb33d38f065340bbb48c39"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/97/75/10a9ebee3fd790d20926a90a2547f0bf78f371b2f13aa822c759680ca7b9/tomli-2.0.1-py3-none-any.whl",
-                    "sha256": "939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/24/21/7d397a4b7934ff4028987914ac1044d3b7d52712f30e2ac7a2ae5bc86dd0/typing_extensions-4.8.0-py3-none-any.whl",
-                    "sha256": "8f92fc8806f9a6b641eaa5318da32b44d401efaac0f6678c9bc448ba3605faa0"
-                }
-            ]
-        },
-        {
-            "name": "python-xlib",
-            "buildsystem": "simple",
-            "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"python-xlib\" --no-build-isolation"
-            ],
-            "sources": [
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/fc/b8/ff33610932e0ee81ae7f1269c890f697d56ff74b9f5b2ee5d9b7fa2c5355/python_xlib-0.33-py2.py3-none-any.whl",
-                    "sha256": "c3534038d42e0df2f1392a1b30a15a4ff5fdc2b86cfa94f072bf11b10a164398"
-                }
-            ]
-        },
-        {
             "name": "lzo",
             "config-opts": [
                 "--enable-shared",
@@ -349,7 +290,7 @@
             "buildsystem": "simple",
             "build-commands": [
                 "install apply_extra /app/bin",
-                "install get-scale-factor.py xsettings.py set-dark-theme-variant.py /app/bin",
+                "install get-scale-factor.py xsettings.py /app/bin",
                 "install spotify-bin /app/bin/spotify",
                 "install -Dm644 com.spotify.Client.appdata.xml /app/share/appdata/com.spotify.Client.appdata.xml",
                 "install -Dm644 com.spotify.Client.svg /app/share/icons/hicolor/scalable/apps/com.spotify.Client.svg",
@@ -394,10 +335,6 @@
                 {
                     "type": "file",
                     "path": "get-scale-factor.py"
-                },
-                {
-                    "type": "file",
-                    "path": "set-dark-theme-variant.py"
                 },
                 {
                     "type": "extra-data",
