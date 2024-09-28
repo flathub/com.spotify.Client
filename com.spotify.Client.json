@@ -122,21 +122,6 @@
             ]
         },
         {
-            "name": "spotifywm",
-            "buildsystem": "simple",
-            "build-commands": [
-                "make -j ${FLATPAK_BUILDER_N_JOBS:-1}",
-                "install -Dm644 spotifywm.so /app/lib/spotifywm.so"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/dasJ/spotifywm.git",
-                    "commit": "8624f539549973c124ed18753881045968881745"
-                }
-            ]
-        },
-        {
             "name": "lzo",
             "config-opts": [
                 "--enable-shared",
