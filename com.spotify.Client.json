@@ -257,21 +257,6 @@
             ]
         },
         {
-            "name": "patchelf",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/NixOS/patchelf.git",
-                    "tag": "0.18.0",
-                    "x-checker-data": {
-                        "type": "git",
-                        "tag-pattern": "^([\\d.]+)$"
-                    },
-                    "commit": "99c24238981b7b1084313aca8f5c493bb46f302c"
-                }
-            ]
-        },
-        {
             "name": "spotify-preload",
             "buildsystem": "simple",
             "build-commands": [
@@ -304,8 +289,7 @@
                     "commands": [
                         "unsquashfs -quiet -no-progress spotify.snap usr/bin usr/share/spotify",
                         "mv squashfs-root/usr/* .",
-                        "rm -r spotify.snap squashfs-root share/spotify/apt-keys share/spotify/spotify.desktop",
-                        "patchelf --replace-needed libcurl-gnutls.so.4 libcurl.so.4 bin/spotify"
+                        "rm -r spotify.snap squashfs-root share/spotify/apt-keys share/spotify/spotify.desktop"
                     ]
                 },
                 {
