@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop">
+<component type="desktop-application">
   <id>com.spotify.Client</id>
   <provides><id>com.spotify.Client.desktop</id></provides>
   <launchable type="desktop-id">com.spotify.Client.desktop</launchable>
