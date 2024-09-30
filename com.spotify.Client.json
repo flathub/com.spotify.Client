@@ -218,9 +218,9 @@
                     "type": "script",
                     "dest-filename": "apply_extra",
                     "commands": [
-                        "unsquashfs -quiet -no-progress spotify.snap usr/bin usr/share/spotify",
-                        "mv squashfs-root/usr/* .",
-                        "rm -r spotify.snap squashfs-root share/spotify/apt-keys share/spotify/spotify.desktop"
+                        "unsquashfs -quiet -no-progress spotify.snap usr/share/spotify",
+                        "mv squashfs-root/usr/share/spotify/* .",
+                        "rm -r apt-keys spotify.desktop spotify.snap squashfs-root"
                     ]
                 },
                 {

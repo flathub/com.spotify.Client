@@ -55,7 +55,7 @@ if [[ -e "${XDG_RUNTIME_DIR}/${WAYLAND_SOCKET}" || -e "${WAYLAND_DISPLAY}" ]]; t
     EXTRA_FLAGS+=("--enable-wayland-ime" "--ozone-platform-hint=auto")
 fi
 
-env PULSE_PROP_application.icon_name="com.spotify.Client" LD_PRELOAD=/app/lib/spotify-preload.so${LD_PRELOAD:+:$LD_PRELOAD} /app/extra/bin/spotify "${EXTRA_FLAGS[@]}" "$@" &
+env PULSE_PROP_application.icon_name="com.spotify.Client" LD_PRELOAD=/app/lib/spotify-preload.so${LD_PRELOAD:+:$LD_PRELOAD} /app/extra/spotify "${EXTRA_FLAGS[@]}" "$@" &
 
 if [ $URI_HANDLED -eq 1 ]; then
     waitandopenuri "$@"
