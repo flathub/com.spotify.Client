@@ -4,7 +4,9 @@
   <provides><id>com.spotify.Client.desktop</id></provides>
   <launchable type="desktop-id">com.spotify.Client.desktop</launchable>
   <name>Spotify</name>
-  <developer_name>Spotify AB</developer_name>
+  <developer id="com.spotify">
+    <name>Spotify AB</name>
+  </developer>
   <summary>Online music streaming service</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LicenseRef-proprietary=https://www.spotify.com/us/legal/end-user-agreement/</project_license>
