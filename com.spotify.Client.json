@@ -211,7 +211,9 @@
                 "install -Dm644 com.spotify.Client.appdata.xml /app/share/appdata/com.spotify.Client.appdata.xml",
                 "install -Dm644 com.spotify.Client.svg /app/share/icons/hicolor/scalable/apps/com.spotify.Client.svg",
                 "install -Dm644 com.spotify.Client-symbolic.svg /app/share/icons/hicolor/symbolic/apps/com.spotify.Client-symbolic.svg",
-                "install -Dm644 com.spotify.Client.desktop /app/share/applications/com.spotify.Client.desktop"
+                "install -Dm644 com.spotify.Client.desktop /app/share/applications/com.spotify.Client.desktop",
+                "desktop-file-edit --set-icon=\"com.spotify.Client\" /app/share/applications/com.spotify.Client.desktop",
+                "desktop-file-edit --set-key=\"X-GNOME-UsesNotifications\" --set-value=\"true\" /app/share/applications/com.spotify.Client.desktop"
             ],
             "sources": [
                 {
