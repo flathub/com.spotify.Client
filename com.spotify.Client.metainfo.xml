@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
   <id>com.spotify.Client</id>
-  <provides><id>com.spotify.Client.desktop</id></provides>
   <launchable type="desktop-id">com.spotify.Client.desktop</launchable>
   <name>Spotify</name>
   <developer id="com.spotify">
@@ -115,5 +114,8 @@
   <content_rating type="oars-1.1">
     <content_attribute id="money-purchasing">intense</content_attribute>
   </content_rating>
+  <provides>
+    <mediatype>x-scheme-handler/spotify</mediatype>
+  </provides>
   <update_contact>tingping_at_fedoraproject.org</update_contact>
 </component>
