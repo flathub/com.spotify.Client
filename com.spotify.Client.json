@@ -208,7 +208,7 @@
                 "install apply_extra /app/bin",
                 "install get-scale-factor.py xsettings.py /app/bin",
                 "install spotify-bin /app/bin/spotify",
-                "install -Dm644 com.spotify.Client.appdata.xml /app/share/appdata/com.spotify.Client.appdata.xml",
+                "install -Dm644 com.spotify.Client.metainfo.xml /app/share/metainfo/com.spotify.Client.metainfo.xml",
                 "install -Dm644 com.spotify.Client.svg /app/share/icons/hicolor/scalable/apps/com.spotify.Client.svg",
                 "install -Dm644 com.spotify.Client-symbolic.svg /app/share/icons/hicolor/symbolic/apps/com.spotify.Client-symbolic.svg",
                 "install -Dm644 com.spotify.Client.desktop /app/share/applications/com.spotify.Client.desktop"
@@ -229,7 +229,7 @@
                 },
                 {
                     "type": "file",
-                    "path": "com.spotify.Client.appdata.xml"
+                    "path": "com.spotify.Client.metainfo.xml"
                 },
                 {
                     "type": "file",
