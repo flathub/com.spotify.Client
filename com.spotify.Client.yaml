@@ -73,7 +73,7 @@ modules:
     buildsystem: simple
     build-commands:
       - cc spotify-preload.c -o spotify-preload.so -fPIC -shared -ldl
-      - install -Dm644 spotify-preload.so /app/lib/spotify-preload.so
+      - install -Dm644 spotify-preload.so ${FLATPAK_DEST}/lib/spotify-preload.so
     sources:
       - type: file
         path: spotify-preload.c
@@ -81,13 +81,13 @@ modules:
   - name: spotify
     buildsystem: simple
     build-commands:
-      - install -Dm755 apply_extra /app/bin
-      - install -Dm755 get-scale-factor.py xsettings.py /app/bin
-      - install -Dm755 spotify-bin /app/bin/spotify
-      - install -Dm644 com.spotify.Client.appdata.xml /app/share/appdata/com.spotify.Client.appdata.xml
-      - install -Dm644 com.spotify.Client.svg /app/share/icons/hicolor/scalable/apps/com.spotify.Client.svg
-      - install -Dm644 com.spotify.Client-symbolic.svg /app/share/icons/hicolor/symbolic/apps/com.spotify.Client-symbolic.svg
-      - install -Dm644 com.spotify.Client.desktop /app/share/applications/com.spotify.Client.desktop
+      - install -Dm755 apply_extra ${FLATPAK_DEST}/bin
+      - install -Dm755 get-scale-factor.py xsettings.py ${FLATPAK_DEST}/bin
+      - install -Dm755 spotify-bin ${FLATPAK_DEST}/bin/spotify
+      - install -Dm644 ${FLATPAK_ID}.appdata.xml ${FLATPAK_DEST}/share/appdata/${FLATPAK_ID}.appdata.xml
+      - install -Dm644 ${FLATPAK_ID}.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
+      - install -Dm644 ${FLATPAK_ID}-symbolic.svg ${FLATPAK_DEST}/share/icons/hicolor/symbolic/apps/${FLATPAK_ID}-symbolic.svg
+      - install -Dm644 ${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
     sources:
       - type: extra-data
         filename: spotify.snap
