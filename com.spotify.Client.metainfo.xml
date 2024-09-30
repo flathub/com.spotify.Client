@@ -117,5 +117,14 @@
   <provides>
     <mediatype>x-scheme-handler/spotify</mediatype>
   </provides>
+  <requires>
+    <display_length compare="ge">768</display_length>
+    <internet bandwidth_mbitps="1">always</internet>
+  </requires>
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>touch</control>
+  </supports>
   <update_contact>tingping_at_fedoraproject.org</update_contact>
 </component>
