@@ -112,6 +112,8 @@
     <release date="2018-10-25" version="1.0.92.390"/>
     <release date="2018-09-15" version="1.0.89.313"/>
   </releases>
-  <content_rating type="oars-1.1"/>
+  <content_rating type="oars-1.1">
+    <content_attribute id="money-purchasing">intense</content_attribute>
+  </content_rating>
   <update_contact>tingping_at_fedoraproject.org</update_contact>
 </component>
