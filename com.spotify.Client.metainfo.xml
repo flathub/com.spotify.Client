@@ -56,19 +56,19 @@
   <screenshots>
     <screenshot type="default">
       <caption>Artist</caption>
-      <image type="source" width="1920" height="1080">https://raw.githubusercontent.com/flathub/com.spotify.Client/master/screenshots/Artist.png</image>
+      <image type="source" width="2244" height="1718">https://raw.githubusercontent.com/flathub/com.spotify.Client/master/screenshots/Artist.png</image>
     </screenshot>
     <screenshot>
       <caption>Playlist</caption>
-      <image type="source" width="1920" height="1080">https://raw.githubusercontent.com/flathub/com.spotify.Client/master/screenshots/Playlist.png</image>
+      <image type="source" width="2244" height="1718">https://raw.githubusercontent.com/flathub/com.spotify.Client/master/screenshots/Playlist.png</image>
     </screenshot>
     <screenshot>
       <caption>Podcast</caption>
-      <image type="source" width="1920" height="1080">https://raw.githubusercontent.com/flathub/com.spotify.Client/master/screenshots/Podcast.png</image>
+      <image type="source" width="2244" height="1718">https://raw.githubusercontent.com/flathub/com.spotify.Client/master/screenshots/Podcast.png</image>
     </screenshot>
     <screenshot>
       <caption>Fullscreen</caption>
-      <image type="source" width="1920" height="1080">https://raw.githubusercontent.com/flathub/com.spotify.Client/master/screenshots/Fullscreen.png</image>
+      <image type="source" width="3840" height="2160">https://raw.githubusercontent.com/flathub/com.spotify.Client/master/screenshots/Fullscreen.png</image>
     </screenshot>
   </screenshots>
   <kudos>
