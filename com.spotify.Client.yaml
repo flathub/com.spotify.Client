@@ -1,0 +1,121 @@
+app-id: com.spotify.Client
+runtime: org.freedesktop.Platform
+runtime-version: '24.08'
+sdk: org.freedesktop.Sdk
+command: spotify
+separate-locales: false
+finish-args:
+  - --device=dri
+  - --env=LD_LIBRARY_PATH=/app/lib
+  - --env=TMPDIR=/tmp
+  - --filesystem=xdg-music:ro
+  - --filesystem=xdg-pictures:ro
+  - --own-name=org.mpris.MediaPlayer2.spotify
+  - --share=ipc
+  - --share=network
+  - --socket=pulseaudio
+  - --socket=x11
+  - --talk-name=org.gnome.SessionManager
+  - --talk-name=org.gnome.SettingsDaemon.MediaKeys
+  - --talk-name=org.kde.StatusNotifierWatcher
+modules:
+  - shared-modules/libayatana-appindicator/libayatana-appindicator-gtk3.json
+  - shared-modules/lzo/lzo.json
+  - shared-modules/squashfs-tools/squashfs-tools.json
+
+  - name: ffmpeg
+    buildsystem: autotools
+    cleanup:
+      - /include
+      - /lib/pkgconfig
+      - /share
+    config-opts:
+      - --disable-avdevice
+      - --disable-avfilter
+      - --disable-bsfs
+      - --disable-decoders
+      - --disable-devices
+      - --disable-doc
+      - --disable-encoders
+      - --disable-filters
+      - --disable-hwaccels
+      - --disable-muxers
+      - --disable-programs
+      - --disable-protocols
+      - --disable-static
+      - --enable-decoder=aac
+      - --enable-decoder=aac_latm
+      - --enable-decoder=ac3
+      - --enable-decoder=als
+      - --enable-decoder=flac
+      - --enable-decoder=mp1
+      - --enable-decoder=mp2
+      - --enable-decoder=mp3
+      - --enable-decoder=mp3adu
+      - --enable-decoder=opus
+      - --enable-decoder=vorbis
+      - --enable-gnutls
+      - --enable-protocol=file
+      - --enable-shared
+    sources:
+      - type: archive
+        url: https://ffmpeg.org/releases/ffmpeg-4.4.5.tar.xz
+        sha256: f9514e0d3515aee5a271283df71636e1d1ff7274b15853bcd84e144be416ab07
+        x-checker-data:
+          project-id: 5405
+          stable-only: true
+          type: anitya
+          url-template: https://ffmpeg.org/releases/ffmpeg-$version.tar.xz
+          versions:
+            <: '5'
+
+  - name: spotify-preload
+    buildsystem: simple
+    build-commands:
+      - cc spotify-preload.c -o spotify-preload.so -fPIC -shared -ldl
+      - install -Dm644 spotify-preload.so /app/lib/spotify-preload.so
+    sources:
+      - type: file
+        path: spotify-preload.c
+
+  - name: spotify
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 apply_extra /app/bin
+      - install -Dm755 get-scale-factor.py xsettings.py /app/bin
+      - install -Dm755 spotify-bin /app/bin/spotify
+      - install -Dm644 com.spotify.Client.appdata.xml /app/share/appdata/com.spotify.Client.appdata.xml
+      - install -Dm644 com.spotify.Client.svg /app/share/icons/hicolor/scalable/apps/com.spotify.Client.svg
+      - install -Dm644 com.spotify.Client-symbolic.svg /app/share/icons/hicolor/symbolic/apps/com.spotify.Client-symbolic.svg
+      - install -Dm644 com.spotify.Client.desktop /app/share/applications/com.spotify.Client.desktop
+    sources:
+      - type: extra-data
+        filename: spotify.snap
+        only-arches: [x86_64]
+        url: https://api.snapcraft.io/api/v1/snaps/download/pOBIoZ2LrCB3rDohMxoYGnbN14EHOgD7_79.snap
+        sha256: 7f0ffdb73d0875f5dd9bb5a17fffc02945ed49a19f373cdf6b8d624c991a77c0
+        size: 191000576
+        x-checker-data:
+          type: snapcraft
+          name: spotify
+          channel: stable
+      - type: file
+        path: com.spotify.Client-symbolic.svg
+      - type: file
+        path: com.spotify.Client.appdata.xml
+      - type: file
+        path: com.spotify.Client.desktop
+      - type: file
+        path: com.spotify.Client.svg
+      - type: file
+        path: get-scale-factor.py
+      - type: file
+        path: spotify-bin
+      - type: file
+        path: xsettings.py
+      - type: script
+        dest-filename: apply_extra
+        commands:
+          - unsquashfs -quiet -no-progress spotify.snap usr/bin usr/share/spotify
+          - mv squashfs-root/usr/* .
+          - rm -r spotify.snap squashfs-root share/spotify/apt-keys share/spotify/spotify.desktop
