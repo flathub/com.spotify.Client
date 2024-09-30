@@ -11,10 +11,46 @@
   <url type="homepage">https://www.spotify.com</url>
   <url type="help">https://community.spotify.com/t5/Desktop-Linux/bd-p/desktop_linux</url>
   <description>
-    <p>Access all of your favorite music, discover new songs, and share music online with your friends - all in one place. 
-    Create shared playlists or share individual songs with your Facebook friends with just a click of a button. 
-    Follow your favorite artists or friends to know what they are listening to, and then save the songs to your own playlists. 
-      Spotify is the best way to have access to millions of songs, and all the latest hits.</p>
+    <p>
+      Stream the tracks you love instantly, browse the charts or fire up curated
+      playlists in every genre and mood. Discover new music too, with awesome
+      playlists built just for you.
+    </p>
+    <p>
+      Spotify also offers 5+ million podcast titles, including originals and
+      exclusives that you can't find anywhere else.
+    </p>
+    <p>
+      Listen free, or get ad-free music listening with Premium.
+    </p>
+    <p>Spotify Free features:</p>
+    <ul>
+      <li>Play songs, albums, playlists and podcasts</li>
+      <li>Listen to your favorite artists</li>
+      <li>Create playlists with your favorite music</li>
+      <li>Enjoy your personal Discover Weekly playlist every week</li>
+      <li>Collaborate on playlists and see what your friends are playing</li>
+      <li>Find nearby events and gigs by your favorite artists</li>
+    </ul>
+    <p>Spotify Premium features:</p>
+    <ul>
+      <li>Download music for offline listening</li>
+      <li>Enjoy high-quality audio</li>
+      <li>Enjoy unlimited skips and full on-demand playback</li>
+      <li>Listen to the music you love, ad-free</li>
+      <li>No commitment - cancel any time you like</li>
+      <li>Get 15 hours of audiobooks every month. Audiobooks in Premium are currently
+      available in Australia, New Zealand, the UK, Ireland, the US &amp; Canada. Discover
+      350,000+, 15 hours/month of available listening for Premium Individual
+      subscribers and Duo &amp; Family plan managers.</li>
+    </ul>
+    <p>
+      Note: Spotify for Linux is a labor of love from our engineers that wanted to
+      listen to Spotify on their Linux development machines. They work on it in their
+      spare time and it is currently not a platform that we actively support. The
+      experience may differ from our other Spotify Desktop clients, such as Windows
+      and Mac.
+    </p>
   </description>
   <screenshots>
     <screenshot type="default">
