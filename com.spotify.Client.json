@@ -21,7 +21,8 @@
         "--filesystem=xdg-music:ro",
         "--filesystem=xdg-pictures:ro",
         "--env=LD_LIBRARY_PATH=/app/lib",
-        "--env=TMPDIR=/tmp"
+        "--env=TMPDIR=/tmp",
+        "--env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons"
     ],
     "cleanup": [
         "/include",
