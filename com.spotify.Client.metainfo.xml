@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.spotify.Client</id>
+  <launchable type="desktop-id">com.spotify.Client.desktop</launchable>
+  <name>Spotify</name>
+  <developer id="com.spotify">
+    <name>Spotify AB</name>
+  </developer>
+  <summary>Online music streaming service</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary=https://www.spotify.com/us/legal/end-user-agreement/</project_license>
+  <url type="homepage">https://www.spotify.com</url>
+  <url type="help">https://community.spotify.com/t5/Desktop-Linux/bd-p/desktop_linux</url>
+  <description>
+    <p>
+      Stream the tracks you love instantly, browse the charts or fire up curated
+      playlists in every genre and mood. Discover new music too, with awesome
+      playlists built just for you.
+    </p>
+    <p>
+      Spotify also offers 5+ million podcast titles, including originals and
+      exclusives that you can't find anywhere else.
+    </p>
+    <p>
+      Listen free, or get ad-free music listening with Premium.
+    </p>
+    <p>Spotify Free features:</p>
+    <ul>
+      <li>Play songs, albums, playlists and podcasts</li>
+      <li>Listen to your favorite artists</li>
+      <li>Create playlists with your favorite music</li>
+      <li>Enjoy your personal Discover Weekly playlist every week</li>
+      <li>Collaborate on playlists and see what your friends are playing</li>
+      <li>Find nearby events and gigs by your favorite artists</li>
+    </ul>
+    <p>Spotify Premium features:</p>
+    <ul>
+      <li>Download music for offline listening</li>
+      <li>Enjoy high-quality audio</li>
+      <li>Enjoy unlimited skips and full on-demand playback</li>
+      <li>Listen to the music you love, ad-free</li>
+      <li>No commitment - cancel any time you like</li>
+      <li>Get 15 hours of audiobooks every month. Audiobooks in Premium are currently
+      available in Australia, New Zealand, the UK, Ireland, the US &amp; Canada. Discover
+      350,000+, 15 hours/month of available listening for Premium Individual
+      subscribers and Duo &amp; Family plan managers.</li>
+    </ul>
+    <p>
+      Note: Spotify for Linux is a labor of love from our engineers that wanted to
+      listen to Spotify on their Linux development machines. They work on it in their
+      spare time and it is currently not a platform that we actively support. The
+      experience may differ from our other Spotify Desktop clients, such as Windows
+      and Mac.
+    </p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Artist</caption>
+      <image type="source" width="2244" height="1718">https://raw.githubusercontent.com/flathub/com.spotify.Client/master/screenshots/Artist.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Playlist</caption>
+      <image type="source" width="2244" height="1718">https://raw.githubusercontent.com/flathub/com.spotify.Client/master/screenshots/Playlist.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Podcast</caption>
+      <image type="source" width="2244" height="1718">https://raw.githubusercontent.com/flathub/com.spotify.Client/master/screenshots/Podcast.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Fullscreen</caption>
+      <image type="source" width="3840" height="2160">https://raw.githubusercontent.com/flathub/com.spotify.Client/master/screenshots/Fullscreen.png</image>
+    </screenshot>
+  </screenshots>
+  <kudos>
+    <kudo>HiDpiIcon</kudo>
+  </kudos>
+  <releases>
+    <release version="1.2.45.454.gc16ec9f6" date="2024-09-25">
+      <description></description>
+    </release>
+    <release version="1.2.42.290.g242057a2" date="2024-07-30">
+      <description/>
+    </release>
+    <release version="1.2.37.701.ge66eb7bc" date="2024-05-31">
+      <description/>
+    </release>
+    <release version="1.2.31.1205.g4d59ad7c" date="2024-02-23"/>
+    <release version="1.2.26.1187.g36b715a1" date="2023-12-08"/>
+    <release version="1.2.25.1011.g0348b2ea" date="2023-11-28"/>
+    <release version="1.2.22.982.g794acc0a" date="2023-10-16"/>
+    <release version="1.2.13.661.ga588f749" date="2023-09-08"/>
+    <release version="1.2.11.916.geb595a67" date="2023-05-15"/>
+    <release version="1.2.9.743.g85d9593d" date="2023-04-19"/>
+    <release version="1.2.8.923.g4f94bf0d" date="2023-04-03"/>
+    <release version="1.1.84.716.gc5f8b819" date="2022-04-27"/>
+    <release version="1.1.80.699.gc3dac750" date="2022-03-03"/>
+    <release version="1.1.77.643.g3c4c6fc6" date="2022-01-26"/>
+    <release version="1.1.72.439.gc253025e" date="2021-11-12"/>
+    <release version="1.1.68.632.g2b11de83" date="2021-09-20"/>
+    <release version="1.1.55.498.gf9a83c60" date="2021-03-22"/>
+    <release version="1.1.55.494.gca75f788" date="2021-03-18"/>
+    <release date="2020-11-16" version="1.1.46.916.g416cacf1"/>
+    <release date="2020-09-16" version="1.1.42.622"/>
+    <release date="2020-02-19" version="1.1.26.501"/>
+    <release date="2019-07-17" version="1.1.10.546"/>
+    <release date="2019-04-30" version="1.1.5.153"/>
+    <release date="2019-01-28" version="1.1.0.237"/>
+    <release date="2019-01-28" version="1.0.98.78"/>
+    <release date="2019-01-09" version="1.0.96.181"/>
+    <release date="2018-12-03" version="1.0.94.262"/>
+    <release date="2018-10-25" version="1.0.92.390"/>
+    <release date="2018-09-15" version="1.0.89.313"/>
+  </releases>
+  <content_rating type="oars-1.1">
+    <content_attribute id="money-purchasing">intense</content_attribute>
+  </content_rating>
+  <provides>
+    <mediatype>x-scheme-handler/spotify</mediatype>
+  </provides>
+  <requires>
+    <display_length compare="ge">768</display_length>
+    <internet bandwidth_mbitps="1">always</internet>
+  </requires>
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>touch</control>
+  </supports>
+  <update_contact>tingping_at_fedoraproject.org</update_contact>
+</component>

@@ -2,11 +2,10 @@
 Type=Application
 Name=Spotify
 GenericName=Music Player
-Icon=com.spotify.Client
+Icon=/usr/share/spotify/icons/spotify-linux-128.png
 TryExec=spotify
 Exec=spotify %U
 Terminal=false
 MimeType=x-scheme-handler/spotify;
 Categories=Audio;Music;Player;AudioVideo;
 StartupWMClass=spotify
-X-GNOME-UsesNotifications=true
