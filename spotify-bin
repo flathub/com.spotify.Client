@@ -47,12 +47,10 @@ if [ -f "${XDG_CONFIG_HOME}/spotify-flags.conf" ]; then
     mapfile -t EXTRA_FLAGS <<< "$(grep -v '^#' "${XDG_CONFIG_HOME}/spotify-flags.conf")"
 fi
 
-if [ "${SCALE_FACTOR}" != "1.0" ]; then
-    EXTRA_FLAGS+=("--force-device-scale-factor=${SCALE_FACTOR}")
-fi
-
 if [[ -e "${XDG_RUNTIME_DIR}/${WAYLAND_SOCKET}" || -e "${WAYLAND_DISPLAY}" ]]; then
     EXTRA_FLAGS+=("--enable-wayland-ime" "--ozone-platform-hint=auto")
+elif [ "${SCALE_FACTOR}" != "1.0" ]; then
+    EXTRA_FLAGS+=("--force-device-scale-factor=${SCALE_FACTOR}")
 fi
 
 env PULSE_PROP_application.icon_name="com.spotify.Client" LD_PRELOAD=/app/lib/spotify-preload.so${LD_PRELOAD:+:$LD_PRELOAD} /app/extra/bin/spotify "${EXTRA_FLAGS[@]}" "$@" &
