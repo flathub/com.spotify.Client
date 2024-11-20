@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCALE_FACTOR=`get-scale-factor.py`
+SCALE_FACTOR=$(get-scale-factor.py)
 WAYLAND_SOCKET=${WAYLAND_DISPLAY:-"wayland-0"}
 
 function openuri {
