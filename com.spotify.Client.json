@@ -158,9 +158,9 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://api.snapcraft.io/api/v1/snaps/download/pOBIoZ2LrCB3rDohMxoYGnbN14EHOgD7_84.snap",
-                    "sha256": "d75a18f6daf21a40c270b4083a0b1ab803d4f7861d19deeba647d865c551d6b4",
-                    "size": 193155072,
+                    "url": "https://api.snapcraft.io/api/v1/snaps/download/pOBIoZ2LrCB3rDohMxoYGnbN14EHOgD7_86.snap",
+                    "sha256": "ae10afd9307f0a86ef0ba7dd72cb8138fb5c730040cc49d772ed21eeae981f67",
+                    "size": 193654784,
                     "x-checker-data": {
                         "type": "snapcraft",
                         "name": "spotify",
