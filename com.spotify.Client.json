@@ -74,8 +74,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://ffmpeg.org/releases/ffmpeg-4.4.5.tar.xz",
-                    "sha256": "f9514e0d3515aee5a271283df71636e1d1ff7274b15853bcd84e144be416ab07",
+                    "url": "https://ffmpeg.org/releases/ffmpeg-4.4.6.tar.xz",
+                    "sha256": "2290461f467c08ab801731ed412d8e724a5511d6c33173654bd9c1d2e25d0617",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 5405,
@@ -158,9 +158,9 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://api.snapcraft.io/api/v1/snaps/download/pOBIoZ2LrCB3rDohMxoYGnbN14EHOgD7_86.snap",
-                    "sha256": "ae10afd9307f0a86ef0ba7dd72cb8138fb5c730040cc49d772ed21eeae981f67",
-                    "size": 193654784,
+                    "url": "https://api.snapcraft.io/api/v1/snaps/download/pOBIoZ2LrCB3rDohMxoYGnbN14EHOgD7_87.snap",
+                    "sha256": "5fc024c1828a2235246170ce704544a2b6443b7df458176dc691e6734ccd5f2e",
+                    "size": 194584576,
                     "x-checker-data": {
                         "type": "snapcraft",
                         "name": "spotify",
