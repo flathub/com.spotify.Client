@@ -53,6 +53,10 @@ elif [ "${SCALE_FACTOR}" != "1.0" ]; then
     EXTRA_FLAGS+=("--force-device-scale-factor=${SCALE_FACTOR}")
 fi
 
+# Disable the Zygote process to prevent it from randomly crashing.
+# https://community.spotify.com/t5/Desktop-Linux/Spotify-binary-frequently-crashing-and-dumping-core-Ubuntu/td-p/6534369
+EXTRA_FLAGS+=("--no-zygote")
+
 env PULSE_PROP_application.icon_name="com.spotify.Client" LD_PRELOAD=/app/lib/spotify-preload.so${LD_PRELOAD:+:$LD_PRELOAD} /app/extra/bin/spotify "${EXTRA_FLAGS[@]}" "$@" &
 
 if [ $URI_HANDLED -eq 1 ]; then
