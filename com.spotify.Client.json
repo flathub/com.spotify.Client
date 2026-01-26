@@ -37,7 +37,6 @@
         "*.a"
     ],
     "modules": [
-        "shared-modules/lzo/lzo.json",
         "shared-modules/squashfs-tools/squashfs-tools.json",
         "shared-modules/libayatana-appindicator/libayatana-appindicator-gtk3.json",
         {
