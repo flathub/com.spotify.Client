@@ -44,8 +44,22 @@ if [ -f "${XDG_CONFIG_HOME}/spotify-flags.conf" ]; then
     mapfile -t EXTRA_FLAGS <<< "$(grep -v '^#' "${XDG_CONFIG_HOME}/spotify-flags.conf")"
 fi
 
-env PULSE_PROP_application.icon_name="com.spotify.Client" LD_PRELOAD=/app/lib/spotify-preload.so${LD_PRELOAD:+:$LD_PRELOAD} /app/extra/bin/spotify "${EXTRA_FLAGS[@]}" "$@" &
+if [[ -e "${XDG_RUNTIME_DIR}/${WAYLAND_SOCKET}" || -e "${WAYLAND_DISPLAY}" ]]; then
+    EXTRA_FLAGS+=("--enable-wayland-ime" "--ozone-platform-hint=auto")
+elif [ "${SCALE_FACTOR}" != "1.0" ]; then
+    EXTRA_FLAGS+=("--force-device-scale-factor=${SCALE_FACTOR}")
+fi
 
-if [ $URI_HANDLED -eq 1 ]; then
+STATUS=1
+env PULSE_PROP_application.icon_name="com.spotify.Client" LD_PRELOAD=/app/lib/spotify-preload.so${LD_PRELOAD:+:$LD_PRELOAD} /app/extra/bin/spotify "${EXTRA_FLAGS[@]}" "$@"
+STATUS=$?
+
+if [ $STATUS -ne 0 ]; then
+    FALLBACK_FLAGS=(--disable-setuid-sandbox --disable-seccomp-filter-sandbox --no-sandbox --disable-gpu --use-gl=swiftshader --use-angle=swiftshader --in-process-gpu --disable-features=UseOzonePlatform --ozone-platform=x11)
+    env PULSE_PROP_application.icon_name="com.spotify.Client" LD_PRELOAD=/app/lib/spotify-preload.so${LD_PRELOAD:+:$LD_PRELOAD} /app/extra/share/spotify/spotify "${FALLBACK_FLAGS[@]}" "${EXTRA_FLAGS[@]}" "$@"
+    STATUS=$?
+fi
+
+if [ $URI_HANDLED -eq 1 ] && [ $STATUS -eq 0 ]; then
     waitandopenuri "$@"
 fi
