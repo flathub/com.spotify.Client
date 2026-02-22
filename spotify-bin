@@ -55,7 +55,7 @@ env PULSE_PROP_application.icon_name="com.spotify.Client" LD_PRELOAD=/app/lib/sp
 STATUS=$?
 
 if [ $STATUS -ne 0 ]; then
-    FALLBACK_FLAGS=(--disable-setuid-sandbox --disable-seccomp-filter-sandbox --no-sandbox --disable-gpu --use-gl=swiftshader --use-angle=swiftshader --in-process-gpu --disable-features=UseOzonePlatform --ozone-platform=x11)
+    FALLBACK_FLAGS=(--ozone-platform=x11)
     env PULSE_PROP_application.icon_name="com.spotify.Client" LD_PRELOAD=/app/lib/spotify-preload.so${LD_PRELOAD:+:$LD_PRELOAD} /app/extra/share/spotify/spotify "${FALLBACK_FLAGS[@]}" "${EXTRA_FLAGS[@]}" "$@"
     STATUS=$?
 fi
