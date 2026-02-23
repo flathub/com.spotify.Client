@@ -50,16 +50,8 @@ elif [ "${SCALE_FACTOR}" != "1.0" ]; then
     EXTRA_FLAGS+=("--force-device-scale-factor=${SCALE_FACTOR}")
 fi
 
-STATUS=1
-env PULSE_PROP_application.icon_name="com.spotify.Client" LD_PRELOAD=/app/lib/spotify-preload.so${LD_PRELOAD:+:$LD_PRELOAD} /app/extra/bin/spotify "${EXTRA_FLAGS[@]}" "$@"
-STATUS=$?
+env PULSE_PROP_application.icon_name="com.spotify.Client" LD_PRELOAD=/app/lib/spotify-preload.so${LD_PRELOAD:+:$LD_PRELOAD} /app/extra/bin/spotify "${EXTRA_FLAGS[@]}" "$@" &
 
-if [ $STATUS -ne 0 ]; then
-    FALLBACK_FLAGS=(--ozone-platform=x11)
-    env PULSE_PROP_application.icon_name="com.spotify.Client" LD_PRELOAD=/app/lib/spotify-preload.so${LD_PRELOAD:+:$LD_PRELOAD} /app/extra/share/spotify/spotify "${FALLBACK_FLAGS[@]}" "${EXTRA_FLAGS[@]}" "$@"
-    STATUS=$?
-fi
-
-if [ $URI_HANDLED -eq 1 ] && [ $STATUS -eq 0 ]; then
+if [ $URI_HANDLED -eq 1 ]; then
     waitandopenuri "$@"
 fi
