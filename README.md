@@ -13,14 +13,15 @@ Below is an example spotify-flags.conf file that defines the flags --disable-gpu
 
 ### Wayland
 
-This package enables the flags to run on Wayland, however it is opt-in. To opt-in run:
+This package runs Wayland by default; an X11 fallback is in place for X11 environments. To force a single X11 run (from Wayland), use:
 
 ```sh
-flatpak override --user --socket=wayland com.spotify.Client
+flatpak override --user --socket=x11 com.spotify.Client
+env WAYLAND_DISPLAY= flatpak run --branch=beta com.spotify.Client --ozone-platform=x11 --disable-features=UseOzonePlatform
 ```
 
-To opt-out:
+To go back to the default behaviour:
 
 ```sh
-flatpak override --user --nosocket=wayland com.spotify.Client
+flatpak override --user --reset com.spotify.Client
 ```
