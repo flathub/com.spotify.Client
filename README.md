@@ -17,7 +17,7 @@ This package runs Wayland by default; an X11 fallback is in place for X11 enviro
 
 ```sh
 flatpak override --user --socket=x11 com.spotify.Client
-env WAYLAND_DISPLAY= flatpak run --branch=beta com.spotify.Client --ozone-platform=x11 --disable-features=UseOzonePlatform
+env WAYLAND_DISPLAY= flatpak run com.spotify.Client --ozone-platform=x11 --disable-features=UseOzonePlatform
 ```
 
 To go back to the default behaviour:
