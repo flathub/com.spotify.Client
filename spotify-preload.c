@@ -55,7 +55,7 @@ void *app_indicator_new_with_path (const char *id, const char *icon_name, int ca
 {
     ensure_resolved();
 
-    return original_indicator_new_with_path (id, ICON_NAME_OVERRIDE, category, icon_theme_path);
+    return original_indicator_new_with_path (id, ICON_NAME_OVERRIDE, category, NULL);
 }
 
 void app_indicator_set_icon (void *indicator, const char *icon_name)
