@@ -1,5 +1,9 @@
 # Spotify
 
+### Reporting bugs
+
+This is community flatpak packaging of official spotify binaries. Please report issues only specifically related to flatpak. Issues reproducible on other platforms can be reported directly in [upstream](https://community.spotify.com/t5/Desktop-Linux/bd-p/desktop_linux).
+
 ### Making flags persistent
 
 Below is an example spotify-flags.conf file that defines the flags --disable-gpu-shader-disk-cache:
