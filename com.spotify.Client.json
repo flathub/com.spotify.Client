@@ -17,7 +17,6 @@
         "--device=dri",
         "--talk-name=org.freedesktop.ScreenSaver",
         "--talk-name=org.gnome.SettingsDaemon.MediaKeys",
-        "--talk-name=org.gnome.SessionManager",
         "--talk-name=org.kde.StatusNotifierWatcher",
         "--own-name=org.mpris.MediaPlayer2.spotify",
         "--filesystem=xdg-music:ro",
