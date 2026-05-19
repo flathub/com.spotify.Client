@@ -29,3 +29,19 @@ To go back to the default behaviour:
 ```sh
 flatpak override --user --reset com.spotify.Client
 ```
+
+### Pipewire and Pulseaudio
+
+Recent Spotify versions use pipewire audio output by default, on older systems pipewire daemon may be not available. In order to switch back to pulseaudio daemon, specify appropriate flag during one-time launch:
+
+```sh
+flatpak run com.spotify.Client --audio-api=pulseaudio
+```
+
+In order to make it persistent, write the option into config file described in #### Making flags persistent:
+```
+~/.var/app/com.spotify.Client/config/spotify-flags.conf
+
+# This line will be ignored.
+--audio-api=pulseaudio
+```
