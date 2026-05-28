@@ -18,11 +18,11 @@
         "--device=dri",
         "--talk-name=org.freedesktop.ScreenSaver",
         "--talk-name=org.gnome.SettingsDaemon.MediaKeys",
-        "--talk-name=org.gnome.SessionManager",
         "--talk-name=org.kde.StatusNotifierWatcher",
         "--own-name=org.mpris.MediaPlayer2.spotify",
         "--filesystem=xdg-music:ro",
         "--filesystem=xdg-pictures:ro",
+        "--filesystem=xdg-run/pipewire-0:ro",
         "--env=LD_LIBRARY_PATH=/app/lib",
         "--env=TMPDIR=/tmp",
         "--env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons"
@@ -76,8 +76,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://ffmpeg.org/releases/ffmpeg-4.4.6.tar.xz",
-                    "sha256": "2290461f467c08ab801731ed412d8e724a5511d6c33173654bd9c1d2e25d0617",
+                    "url": "https://ffmpeg.org/releases/ffmpeg-4.4.7.tar.xz",
+                    "sha256": "39e7d6d0af050a0a8aae737d610d77264e67b9657f3a346f72bba03312565e2a",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 5405,
@@ -151,9 +151,9 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "url": "https://api.snapcraft.io/api/v1/snaps/download/pOBIoZ2LrCB3rDohMxoYGnbN14EHOgD7_94.snap",
-                    "sha256": "5e1c3268e6dc93abe222f0d15c4ced9522e36b97ec7f0e4780751443331e84b2",
-                    "size": 170303488,
+                    "url": "https://api.snapcraft.io/api/v1/snaps/download/pOBIoZ2LrCB3rDohMxoYGnbN14EHOgD7_96.snap",
+                    "sha256": "ba61ec4d0e5cffbbc2fccfe7e419b024e5f4a5f46380399b3522e1109f6b3c96",
+                    "size": 183676928,
                     "x-checker-data": {
                         "type": "snapcraft",
                         "name": "spotify",
