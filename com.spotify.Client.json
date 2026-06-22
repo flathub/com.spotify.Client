@@ -21,7 +21,6 @@
         "--own-name=org.mpris.MediaPlayer2.spotify",
         "--filesystem=xdg-music:ro",
         "--filesystem=xdg-pictures:ro",
-        "--filesystem=xdg-run/pipewire-0",
         "--env=LD_LIBRARY_PATH=/app/lib",
         "--env=TMPDIR=/tmp",
         "--env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons"
