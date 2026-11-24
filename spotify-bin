@@ -39,9 +39,17 @@ URI_HANDLED=$?
 if [ $URI_HANDLED -eq 0 ]; then
     exit 0
 fi
-
+EXTRA_FLAGS=()
 if [ -f "${XDG_CONFIG_HOME}/spotify-flags.conf" ]; then
-    mapfile -t EXTRA_FLAGS <<< "$(grep -v '^#' "${XDG_CONFIG_HOME}/spotify-flags.conf")"
+    mapfile -t EXTRA_FLAGS <<< "$(grep -v '^#\|^$' "${XDG_CONFIG_HOME}/spotify-flags.conf")"
+fi
+
+# Work around broken VA-API + Mesa radv video playback stalls on AMD GPUs
+# unless the user already explicitly configured Chromium features.
+if grep -ql "amdgpu" /sys/class/drm/card*/device/uevent 2>/dev/null; then
+    if [[ ! " ${EXTRA_FLAGS[*]} $* " =~ (--disable-features|--enable-features) ]]; then
+        EXTRA_FLAGS+=("--disable-features=VaapiVideoDecoder")
+    fi
 fi
 
 env PULSE_PROP_application.icon_name="com.spotify.Client" LD_PRELOAD=/app/lib/spotify-preload.so${LD_PRELOAD:+:$LD_PRELOAD} /app/extra/bin/spotify "${EXTRA_FLAGS[@]}" "$@" &
